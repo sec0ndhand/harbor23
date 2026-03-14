@@ -1,6 +1,7 @@
 import { data } from "react-router";
 import type { MetaFunction, LoaderFunctionArgs } from "react-router";
 import { useLoaderData, Link } from "react-router";
+import { ChevronLeft } from "lucide-react";
 import { getBlogPost } from "~/lib/pocketbase.server";
 import { buildMeta } from "~/lib/seo";
 import { PROPERTY } from "~/lib/property-data";
@@ -123,9 +124,7 @@ export default function BlogPost() {
               to="/blog"
               className="inline-flex items-center gap-2 text-harbor-blue font-medium text-sm hover:text-harbor-gold transition-colors"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
+              <ChevronLeft className="w-4 h-4" />
               Back to Blog
             </Link>
           </div>

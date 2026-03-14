@@ -1,5 +1,6 @@
 import { data, Form } from "react-router";
 import type { MetaFunction, ActionFunctionArgs } from "react-router";
+import { User } from "lucide-react";
 import { buildMeta, PAGE_META } from "~/lib/seo";
 import { PROPERTY, IMAGES } from "~/lib/property-data";
 import { createInquiry } from "~/lib/pocketbase.server";
@@ -72,9 +73,7 @@ export default function Book() {
                 rel="noopener noreferrer"
                 className="btn-gold w-full text-center text-base py-4 mb-8 flex items-center justify-center gap-3"
               >
-                <svg className="w-5 h-5" viewBox="0 0 32 32" fill="currentColor">
-                  <path d="M16 1C7.716 1 1 7.716 1 16s6.716 15 15 15 15-6.716 15-15S24.284 1 16 1zm0 2c7.168 0 13 5.832 13 13s-5.832 13-13 13S3 23.168 3 16 8.832 3 16 3zm-.004 4.5c-2.485 0-4.5 2.015-4.5 4.5 0 1.63.872 3.058 2.172 3.873C11.178 16.958 9.5 19.12 9.5 21.5h2c0-2.481 2.019-4.5 4.5-4.5s4.5 2.019 4.5 4.5h2c0-2.38-1.678-4.542-4.168-5.627A4.49 4.49 0 0020.5 12c0-2.485-2.015-4.5-4.5-4.5h-.004zm0 2c1.378 0 2.5 1.122 2.5 2.5s-1.122 2.5-2.5 2.5-2.5-1.122-2.5-2.5 1.118-2.5 2.496-2.5z" />
-                </svg>
+                <User className="w-5 h-5" />
                 View Calendar &amp; Book on Airbnb
               </a>
 

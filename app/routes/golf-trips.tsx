@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import type { MetaFunction } from "react-router";
+import { Check, ChevronRight } from "lucide-react";
 import { buildMeta, PAGE_META } from "~/lib/seo";
 import { PROPERTY, IMAGES, GOLF_COURSES, STATIC_REVIEWS, getLodgingSchema } from "~/lib/property-data";
 import BookingCTA from "~/components/BookingCTA";
@@ -101,7 +102,6 @@ export default function GolfTrips() {
             alt="Golf trip Lake Geneva Wisconsin — Harbor on 23rd"
             className="w-full h-full object-cover"
             loading="eager"
-            fetchPriority="high"
           />
           <div className="hero-gradient absolute inset-0" />
         </div>
@@ -296,17 +296,9 @@ export default function GolfTrips() {
                 <ul className="space-y-2.5">
                   {day.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                      <svg
+                      <Check
                         className="w-4 h-4 text-harbor-gold mt-0.5 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      />
                       {item}
                     </li>
                   ))}
@@ -338,9 +330,7 @@ export default function GolfTrips() {
               className="hidden md:inline-flex items-center gap-1.5 text-harbor-blue font-medium text-sm hover:text-harbor-gold transition-colors mt-4 md:mt-0"
             >
               Read All Reviews
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -355,7 +345,7 @@ export default function GolfTrips() {
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <BookingCTA
         heading="Ready to Plan Your Golf Trip?"
-        subheading="Harbor on 23rd fills up fast for summer weekends. Lock in your dates now."
+        subtext="Harbor on 23rd fills up fast for summer weekends. Lock in your dates now."
       />
     </>
   );

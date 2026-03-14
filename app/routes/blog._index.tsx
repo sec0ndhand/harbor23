@@ -1,6 +1,7 @@
 import { data } from "react-router";
 import type { MetaFunction, LoaderFunctionArgs } from "react-router";
 import { useLoaderData, Link } from "react-router";
+import { ChevronRight } from "lucide-react";
 import { buildMeta, PAGE_META } from "~/lib/seo";
 import { getBlogPosts } from "~/lib/pocketbase.server";
 import { IMAGES } from "~/lib/property-data";
@@ -177,9 +178,7 @@ function PostCard({
         {!isPlaceholder && (
           <span className="mt-4 inline-flex items-center gap-1 text-harbor-blue text-sm font-medium hover:text-harbor-gold transition-colors">
             Read more
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            <ChevronRight className="w-3.5 h-3.5" />
           </span>
         )}
         {isPlaceholder && (

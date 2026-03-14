@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import type { GalleryImage } from "~/lib/types";
 
 interface GalleryProps {
@@ -163,9 +164,7 @@ function Lightbox({ images, idx, onClose, onPrev, onNext }: LightboxProps) {
         onClick={onClose}
         aria-label="Close gallery"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <X className="w-6 h-6" />
       </button>
 
       {/* Prev */}
@@ -174,9 +173,7 @@ function Lightbox({ images, idx, onClose, onPrev, onNext }: LightboxProps) {
         onClick={(e) => { e.stopPropagation(); onPrev(); }}
         aria-label="Previous photo"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
+        <ChevronLeft className="w-6 h-6" />
       </button>
 
       {/* Next */}
@@ -185,9 +182,7 @@ function Lightbox({ images, idx, onClose, onPrev, onNext }: LightboxProps) {
         onClick={(e) => { e.stopPropagation(); onNext(); }}
         aria-label="Next photo"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+        <ChevronRight className="w-6 h-6" />
       </button>
     </div>
   );

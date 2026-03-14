@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router";
+import { Anchor, ChevronDown, X, Menu } from "lucide-react";
 import { PROPERTY } from "~/lib/property-data";
 
 const NAV_LINKS = [
@@ -41,14 +42,10 @@ export default function Nav() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <svg
-              className={`w-7 h-7 transition-colors ${scrolled ? "text-harbor-gold" : "text-harbor-gold"}`}
-              fill="currentColor"
-              viewBox="0 0 24 24"
+            <Anchor
+              className="w-7 h-7 text-harbor-gold transition-colors"
               aria-hidden="true"
-            >
-              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-9V7h2v4h3l-4 4-4-4h3z" />
-            </svg>
+            />
             <span
               className={`font-display font-semibold text-lg tracking-wide transition-colors ${logoColor}`}
             >
@@ -86,9 +83,7 @@ export default function Nav() {
                 aria-expanded={expOpen}
               >
                 Experiences
-                <svg className="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                <ChevronDown className="w-4 h-4 mt-0.5" />
               </button>
               {expOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-50">
@@ -139,13 +134,9 @@ export default function Nav() {
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <X className="w-6 h-6" />
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <Menu className="w-6 h-6" />
             )}
           </button>
         </div>

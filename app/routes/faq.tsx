@@ -1,5 +1,6 @@
 import type { MetaFunction } from "react-router";
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { buildMeta, PAGE_META } from "~/lib/seo";
 import { FAQ_ITEMS, PROPERTY } from "~/lib/property-data";
 import BookingCTA from "~/components/BookingCTA";
@@ -39,9 +40,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         <span
           className={`flex-shrink-0 w-6 h-6 rounded-full bg-harbor-blue text-white flex items-center justify-center transition-transform mt-0.5 ${open ? "rotate-180" : ""}`}
         >
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-          </svg>
+          <ChevronDown className="w-3.5 h-3.5" />
         </span>
       </button>
       {open && (
