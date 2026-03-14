@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://harbor23.com/sitemap.xml
