@@ -1,9 +1,9 @@
 import type { GalleryImage, Review, Amenity } from "./types";
 
 export const PROPERTY = {
-  name: "Harbor on 23rd",
-  internalName: "Blue Juniper",
-  tagline: "Where Every Stay Becomes a Story",
+  name: "Blue Juniper",
+  internalName: "Harbor on 23rd, Blue Juniper",
+  tagline: "Cozy Lakeside Retreat Near Downtown Lake Geneva",
   airbnbUrl: "https://www.airbnb.com/rooms/724172366486876051",
   siteUrl: "https://harbor23.com",
 
