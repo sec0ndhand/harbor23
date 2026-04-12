@@ -43,6 +43,8 @@ export default function Gallery({ images, heroLayout = false }: GalleryProps) {
               alt={images[0].alt}
               className="w-full h-full object-cover"
               loading="eager"
+              width={1200}
+              height={800}
             />
           </div>
           {/* Four smaller images */}
@@ -57,6 +59,8 @@ export default function Gallery({ images, heroLayout = false }: GalleryProps) {
                 alt={img.alt}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                width={800}
+                height={600}
               />
               {/* Show all photos button on last tile */}
               {i === 3 && (
@@ -102,6 +106,8 @@ export default function Gallery({ images, heroLayout = false }: GalleryProps) {
               alt={img.alt}
               className="w-full h-auto object-cover"
               loading={i < 6 ? "eager" : "lazy"}
+              width={800}
+              height={600}
             />
             {img.caption && (
               <p className="text-xs text-gray-500 px-2 py-1">{img.caption}</p>

@@ -41,8 +41,8 @@ export function buildMeta(meta: SEOMeta) {
 
 export const PAGE_META = {
   home: {
-    title: `${PROPERTY.name} | Luxury Lake Geneva Vacation Rental`,
-    description: `Spacious 4-bedroom retreat in Lake Geneva, WI. Perfect for golf trips, bachelorette parties & family vacations. Lake access included. Sleeps 14. Book at harbor23.com.`,
+    title: `${PROPERTY.name} | Lake Geneva Rental · 90 Min From Chicago`,
+    description: `Lake Geneva, WI vacation rental — 90 minutes from downtown Chicago. Sleeps 14 across 4 bedrooms. Lake access, game room, fire pit. Built for golf trips, bachelorette parties & family getaways.`,
     canonical: "/",
   },
   theHouse: {
@@ -61,18 +61,18 @@ export const PAGE_META = {
     canonical: "/location",
   },
   golfTrips: {
-    title: `Boys Golf Trip Rental Lake Geneva, WI | ${PROPERTY.name}`,
-    description: `The ultimate Lake Geneva golf getaway. Private 4BR home sleeping 14, minutes from Grand Geneva, Geneva National & more. Game room, fire pit & grill included.`,
+    title: `Golf Trip House 90 Min From Chicago | ${PROPERTY.name}`,
+    description: `5 world-class courses within 12 miles of Lake Geneva, WI — 90 minutes from Chicago. Private 4BR home sleeping 14. Grand Geneva, Geneva National, Abbey Springs. Fire pit & game room.`,
     canonical: "/golf-trips",
   },
   bachelorette: {
-    title: `Bachelorette Party House Lake Geneva | ${PROPERTY.name}`,
-    description: `Make your Lake Geneva bachelorette unforgettable. Private 4BR home with game room, fire pit & lake access. 5 minutes from bars, restaurants & boutiques. Sleeps 14.`,
+    title: `Bachelorette House 90 Min From Chicago | ${PROPERTY.name}`,
+    description: `Private 4BR Lake Geneva bachelorette house — 90 minutes from downtown Chicago. No flights, no hotels, no shared walls. Fire pit, game room, lake access. Sleeps 14.`,
     canonical: "/bachelorette-party",
   },
   family: {
-    title: `Family Vacation Rental Lake Geneva WI | ${PROPERTY.name}`,
-    description: `Kid-friendly 4BR lake house near Lake Geneva, Wisconsin. Crib, toys, fenced yard, lake access & game room. Create lasting family memories at Harbor on 23rd.`,
+    title: `Family Lake House 90 Min From Chicago | ${PROPERTY.name}`,
+    description: `Kid-friendly 4BR Lake Geneva rental — 90 minutes from Chicago. Crib, toys, fenced yard, bunk rooms, lake access. Sleeps 14. No flights, no airport meltdowns.`,
     canonical: "/family-vacation",
   },
   book: {
@@ -91,8 +91,8 @@ export const PAGE_META = {
     canonical: "/faq",
   },
   blog: {
-    title: `Travel Blog | ${PROPERTY.name} – Lake Geneva, WI`,
-    description: `Tips, guides & inspiration for your Lake Geneva getaway. Golf courses, bachelorette ideas, family activities, local dining & more from Harbor on 23rd.`,
+    title: `Lake Geneva Travel Blog | 90 Minutes From Chicago`,
+    description: `Weekend getaway guides for Chicago-area travelers: golf trips, bachelorette weekends, family vacations, and local Lake Geneva tips from the hosts of Harbor on 23rd.`,
     canonical: "/blog",
   },
 };

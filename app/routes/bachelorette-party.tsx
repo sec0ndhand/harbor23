@@ -115,14 +115,15 @@ export default function BachelorettePage() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="inline-block bg-harbor-gold text-harbor-blue text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
-            Bachelorette Party · Lake Geneva, WI
+            Bachelorette Party · 90 Minutes From Chicago
           </span>
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight max-w-4xl">
             The Bachelorette Weekend She Deserves
           </h1>
           <p className="text-blue-100 text-xl mb-8 max-w-2xl leading-relaxed">
             Private 4-bedroom home. Fire pit. Lake access. Downtown 5 minutes away.
-            Harbor on 23rd is where Lake Geneva bachelorette parties happen.
+            <strong className="text-white font-semibold"> ~90 minutes from downtown Chicago</strong> —
+            skip the Nashville flights and make it a whole-weekend lake house party.
           </p>
           <div className="flex flex-wrap gap-4">
             <a

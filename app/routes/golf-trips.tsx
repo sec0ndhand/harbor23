@@ -109,14 +109,15 @@ export default function GolfTrips() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="inline-block bg-harbor-gold text-harbor-blue text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
-            Boys Golf Trip · Lake Geneva, WI
+            Boys Golf Trip · 90 Minutes From Chicago
           </span>
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight max-w-4xl">
             The Ultimate Lake Geneva Golf Getaway
           </h1>
           <p className="text-blue-100 text-xl mb-8 max-w-2xl leading-relaxed">
-            5 world-class courses. Private home sleeping 14. The 19th hole built right in.
-            Harbor on 23rd is your golf crew's new annual tradition.
+            5 world-class courses within 12 miles. Private home sleeping 14. The 19th hole built
+            right in. <strong className="text-white font-semibold">~90 minutes from
+            downtown Chicago</strong> — no flights, no rental cars, just hit the road.
           </p>
           <div className="flex flex-wrap gap-4">
             <a

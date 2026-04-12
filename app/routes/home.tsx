@@ -60,6 +60,10 @@ export default function Home() {
           <p className="text-harbor-gold font-display italic text-2xl sm:text-3xl mb-2">
             Lake Geneva, Wisconsin
           </p>
+          <p className="text-white/90 text-sm font-medium mb-4 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
+            <MapPin className="w-3.5 h-3.5 text-harbor-gold" />
+            ~90 minutes from downtown Chicago
+          </p>
           <p className="text-blue-100 text-lg mb-8 max-w-lg leading-relaxed">
             {PROPERTY.tagline} — A spacious 4-bedroom retreat where groups of up to 14 make memories that last a lifetime.
           </p>

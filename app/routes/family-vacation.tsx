@@ -158,14 +158,15 @@ export default function FamilyVacation() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="inline-block bg-harbor-gold text-harbor-blue text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
-            Family Vacation · Lake Geneva, WI
+            Family Vacation · 90 Minutes From Chicago
           </span>
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight max-w-4xl">
             A Family Vacation They'll Never Forget
           </h1>
           <p className="text-blue-100 text-xl mb-8 max-w-2xl leading-relaxed">
             Kid-friendly from day one. Crib, toys, fenced yard, bunk beds, and lake access.
-            Harbor on 23rd is the family retreat you've been looking for.
+            <strong className="text-white font-semibold"> ~90 minutes from downtown Chicago</strong> —
+            no flights, no airport meltdowns, just load the car and go.
           </p>
           <div className="flex flex-wrap gap-4">
             <a

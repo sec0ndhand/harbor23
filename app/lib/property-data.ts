@@ -59,22 +59,70 @@ function img(filename: string, alt: string, caption?: string): GalleryImage {
 }
 
 export const IMAGES = {
-  hero: img("0fb0755d-0c7e-4cb5-a990-779494ef9559.jpeg", "Harbor on 23rd exterior view"),
-  bedroom1: img("063c8df6-b539-4a50-ada5-9ad9896c6f54.jpeg", "Bedroom with bunk beds"),
-  bedroom2: img("f51ddd26-8b58-405c-9e12-c1422fe7b864.jpeg", "Queen bedroom"),
-  bedroom3: img("4b3c9eb4-2211-42a4-897d-088121b3568c.jpeg", "Cozy queen bedroom"),
-  bedroom4: img("1ab5b076-b11d-4f51-98f7-bc68ee7028a0.jpeg", "Master bedroom with queen and bunks"),
-  living1: img("c5e54af7-a0f6-4ee3-87f3-935d8c178d33.jpeg", "Spacious living room"),
-  living2: img("fb0bad41-d537-4aa6-bc3c-52ec5917bd90.jpeg", "Living area with fireplace"),
-  kitchen: img("3f21f60d-8c4c-4456-a241-11b26a56dcdf.jpeg", "Full kitchen"),
-  dining: img("4f68c757-ca48-4528-88a1-6aaee44811e5.jpeg", "Dining area with large table"),
-  gameRoom: img("54ee0570-3922-4853-8a6c-b2d4088f3e66.jpeg", "Game room"),
-  backyard: img("65cc9bdc-1308-4d01-a0df-1b09ddaab09f.jpeg", "Fenced backyard"),
-  firePit: img("c3c3768f-3ce2-41fa-935b-0386eea9c425.jpeg", "Outdoor fire pit"),
-  patio: img("ab9428af-b4c7-48e6-b793-2b93ebebb492.jpeg", "Back patio with outdoor furniture"),
-  bathroom1: img("c60f05d4-cce4-40a5-a06f-a098af239499.jpeg", "Full bathroom"),
-  exterior2: img("654ff099-1a67-4ec1-986d-e20e0e7e4447.jpeg", "Property exterior"),
-  exterior3: img("34528ab5-b67e-4ada-a56d-6ebe2591b886.jpeg", "Front of house"),
+  hero: img(
+    "0fb0755d-0c7e-4cb5-a990-779494ef9559.jpeg",
+    "Harbor on 23rd — a cozy 4-bedroom Lake Geneva Wisconsin vacation rental, exterior view"
+  ),
+  bedroom1: img(
+    "063c8df6-b539-4a50-ada5-9ad9896c6f54.jpeg",
+    "Kid-friendly bunk bedroom sleeping four at Harbor on 23rd"
+  ),
+  bedroom2: img(
+    "f51ddd26-8b58-405c-9e12-c1422fe7b864.jpeg",
+    "Queen bedroom with luxury bamboo sheets"
+  ),
+  bedroom3: img(
+    "4b3c9eb4-2211-42a4-897d-088121b3568c.jpeg",
+    "Cozy queen guest bedroom with soft lighting"
+  ),
+  bedroom4: img(
+    "1ab5b076-b11d-4f51-98f7-bc68ee7028a0.jpeg",
+    "Primary bedroom with a queen bed and bunk beds for families"
+  ),
+  living1: img(
+    "c5e54af7-a0f6-4ee3-87f3-935d8c178d33.jpeg",
+    "Spacious open-plan living room with sectional seating for groups of 14"
+  ),
+  living2: img(
+    "fb0bad41-d537-4aa6-bc3c-52ec5917bd90.jpeg",
+    "Living area with a gas fireplace and large windows"
+  ),
+  kitchen: img(
+    "3f21f60d-8c4c-4456-a241-11b26a56dcdf.jpeg",
+    "Full gourmet kitchen with gas stove, island and bar stools"
+  ),
+  dining: img(
+    "4f68c757-ca48-4528-88a1-6aaee44811e5.jpeg",
+    "Large dining table seating the whole group for family dinners"
+  ),
+  gameRoom: img(
+    "54ee0570-3922-4853-8a6c-b2d4088f3e66.jpeg",
+    "Basement game room with pool table — a rainy-day favorite"
+  ),
+  backyard: img(
+    "65cc9bdc-1308-4d01-a0df-1b09ddaab09f.jpeg",
+    "Fully fenced backyard with space for kids and pets"
+  ),
+  firePit: img(
+    "c3c3768f-3ce2-41fa-935b-0386eea9c425.jpeg",
+    "Stone fire pit in the backyard for evening gatherings and s'mores"
+  ),
+  patio: img(
+    "ab9428af-b4c7-48e6-b793-2b93ebebb492.jpeg",
+    "Back patio with outdoor seating for lake-days and sunsets"
+  ),
+  bathroom1: img(
+    "c60f05d4-cce4-40a5-a06f-a098af239499.jpeg",
+    "Full bathroom with a walk-in shower and modern fixtures"
+  ),
+  exterior2: img(
+    "654ff099-1a67-4ec1-986d-e20e0e7e4447.jpeg",
+    "Harbor on 23rd exterior with landscaped front yard"
+  ),
+  exterior3: img(
+    "34528ab5-b67e-4ada-a56d-6ebe2591b886.jpeg",
+    "Front of the Harbor on 23rd house, tree-lined street view"
+  ),
 };
 
 export const GALLERY: GalleryImage[] = [
@@ -326,9 +374,9 @@ export const FAQ_ITEMS = [
       "The house is just about 5 minutes from downtown Lake Geneva, where you'll find restaurants, bars, boutique shops, the lakefront promenade, and boat tours.",
   },
   {
-    question: "How far is Lake Geneva from Chicago and Milwaukee?",
+    question: "How long is the drive from Chicago to Lake Geneva?",
     answer:
-      "Lake Geneva is approximately 1 hour north of Chicago and 1 hour south of Milwaukee, making it a perfect weekend getaway destination from either city.",
+      "Harbor on 23rd is about 90 minutes from downtown Chicago — roughly 75 miles up I-94. From Chicago's north-side neighborhoods (Lincoln Park, Lakeview, Wicker Park) and north-shore suburbs (Evanston, Northbrook, Highland Park) it's closer to 60–80 minutes. No flights, no rental cars, just get in the car and go. Milwaukee is about an hour north of the property.",
   },
   {
     question: "Is parking available?",
