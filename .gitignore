@@ -1,4 +1,12 @@
 build/*
 node_modules/*
 .react-router/*
+.netlify/
+# Playwright artifacts — re-generated on every test run.
+test-results/
+playwright-report/
+# Local tsc output — the project builds through Vite/React Router, not raw tsc.
+# If tsc is ever run without `noEmit`, it produces .js files next to sources
+# that shadow the .tsx files during the Vite build. Ignore them to be safe.
+app/**/*.js
 

@@ -13,6 +13,13 @@
     "strict": true,
     "allowJs": true,
     "skipLibCheck": true,
+    "noEmit": true,
+    // React Router 7 typegen emits .ts files under .react-router/types that
+    // reference sibling source files via `../home.js`. rootDirs merges the
+    // typegen tree with the source tree for module resolution, so
+    // `.react-router/types/app/routes/+types/home.ts` resolves `../home.js`
+    // to `app/routes/home.tsx`.
+    "rootDirs": [".", "./.react-router/types"],
     "paths": {
       "~/*": ["./app/*"]
     }

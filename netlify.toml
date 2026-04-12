@@ -1,0 +1,21 @@
+# Netlify build configuration for Harbor23.
+#
+# The heavy lifting is done by @netlify/vite-plugin-react-router (configured in
+# vite.config.ts). It turns the React Router v7 SSR build into a Netlify
+# Function handler and writes a catch-all `_redirects` entry into build/client
+# at build time — do NOT add a manual [[redirects]] block here or it will
+# shadow SSR routes like /sitemap.xml.
+
+[build]
+  command = "npm run build"
+  publish = "build/client"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Long-cache immutable assets (Vite-hashed). Everything else defaults to
+# Netlify's standard short-cache HTML behavior.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
