@@ -1,6 +1,12 @@
 import { PROPERTY } from "./property-data";
 
-const SITE_URL = process.env.SITE_URL || "https://harbor23.com";
+// seo.ts is imported by route meta functions, which run on both the server
+// (SSR) and the client (during navigation). `process` is a Node global and
+// is undefined in the browser, so we have to guard the access or the module
+// throws at import time during client-side route transitions.
+const SITE_URL =
+  (typeof process !== "undefined" && process.env?.SITE_URL) ||
+  "https://harbor23.com";
 
 export interface SEOMeta {
   title: string;
