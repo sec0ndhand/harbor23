@@ -2,7 +2,7 @@ import { data } from "react-router";
 import type { MetaFunction, LoaderFunctionArgs } from "react-router";
 import { useLoaderData, Link } from "react-router";
 import { ChevronLeft } from "lucide-react";
-import { getBlogPost } from "~/lib/pocketbase.server";
+import { getBlogPost } from "~/lib/blog";
 import { buildMeta } from "~/lib/seo";
 import { PROPERTY } from "~/lib/property-data";
 import BookingCTA from "~/components/BookingCTA";
@@ -108,7 +108,7 @@ export default function BlogPost() {
             </p>
           )}
 
-          {/* Rich text content from PocketBase editor */}
+          {/* Rendered markdown from app/content/blog/*.md (parsed at build time) */}
           <div
             className="prose prose-lg prose-harbor max-w-none
               prose-headings:font-display prose-headings:text-harbor-blue

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Netlify Forms — form schema</title>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <!--
+      This file exists so Netlify's build-time form detector can register the
+      inquiry form. The actual rendered form lives in app/routes/book.tsx and is
+      submitted client-side via fetch(). Keep the field set in sync with that
+      form: Netlify rejects submissions containing fields that aren't declared
+      here.
+    -->
+    <form name="inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="number" name="guests" />
+      <input type="date" name="check_in" />
+      <input type="date" name="check_out" />
+      <select name="event_type">
+        <option value="family"></option>
+        <option value="golf"></option>
+        <option value="bachelorette"></option>
+        <option value="other"></option>
+      </select>
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+  </body>
+</html>

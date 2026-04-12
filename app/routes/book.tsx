@@ -1,35 +1,17 @@
-import { data, Form } from "react-router";
-import type { MetaFunction, ActionFunctionArgs } from "react-router";
+import { useState } from "react";
+import type { MetaFunction } from "react-router";
 import { User } from "lucide-react";
 import { buildMeta, PAGE_META } from "~/lib/seo";
 import { PROPERTY, IMAGES } from "~/lib/property-data";
-import { createInquiry } from "~/lib/pocketbase.server";
-import type { Inquiry } from "~/lib/types";
+import { Icon, type IconName } from "~/lib/icons";
 
 export const meta: MetaFunction = () => buildMeta(PAGE_META.book);
 
-export async function action({ request }: ActionFunctionArgs) {
-  const formData = await request.formData();
-
-  const inquiry: Inquiry = {
-    name: String(formData.get("name") || ""),
-    email: String(formData.get("email") || ""),
-    phone: String(formData.get("phone") || "") || undefined,
-    message: String(formData.get("message") || ""),
-    check_in: String(formData.get("check_in") || "") || undefined,
-    check_out: String(formData.get("check_out") || "") || undefined,
-    guests: formData.get("guests") ? Number(formData.get("guests")) : undefined,
-    event_type: (formData.get("event_type") as Inquiry["event_type"]) || undefined,
-  };
-
-  // Basic validation
-  if (!inquiry.name || !inquiry.email || !inquiry.message) {
-    return data({ success: false, error: "Please fill in your name, email, and message." }, { status: 400 });
-  }
-
-  const result = await createInquiry(inquiry);
-  return data(result);
-}
+// Netlify Forms: submissions are handled entirely by Netlify's edge, not by a
+// React Router action. The form schema is declared once in public/__forms.html
+// so Netlify's post-processing can detect it during build; runtime submissions
+// are posted client-side via fetch, which keeps the SSR HTML clean and lets us
+// show inline success/error states without a page reload.
 
 export default function Book() {
   return (
@@ -83,18 +65,20 @@ export default function Book() {
                   Quick Facts
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { icon: "🛏️", label: "Bedrooms", value: "4" },
-                    { icon: "👥", label: "Max Guests", value: "14" },
-                    { icon: "🛁", label: "Bathrooms", value: "3" },
-                    { icon: "⭐", label: "Rating", value: `${PROPERTY.rating}/5` },
-                    { icon: "🔑", label: "Check-in", value: PROPERTY.checkIn },
-                    { icon: "🚪", label: "Check-out", value: PROPERTY.checkOut },
-                    { icon: "🐾", label: "Pets", value: "Not allowed" },
-                    { icon: "🚗", label: "Parking", value: "Free (5–6 cars)" },
-                  ].map((fact) => (
+                  {(
+                    [
+                      { icon: "bedroom", label: "Bedrooms", value: "4" },
+                      { icon: "guests", label: "Max Guests", value: "14" },
+                      { icon: "bathroom", label: "Bathrooms", value: "3" },
+                      { icon: "sparkle", label: "Rating", value: `${PROPERTY.rating}/5` },
+                      { icon: "self-checkin", label: "Check-in", value: PROPERTY.checkIn },
+                      { icon: "door", label: "Check-out", value: PROPERTY.checkOut },
+                      { icon: "no-pets", label: "Pets", value: "Not allowed" },
+                      { icon: "parking", label: "Parking", value: "Free (5–6 cars)" },
+                    ] satisfies { icon: IconName; label: string; value: string }[]
+                  ).map((fact) => (
                     <div key={fact.label} className="flex items-center gap-3">
-                      <span className="text-xl w-8 text-center">{fact.icon}</span>
+                      <Icon name={fact.icon} size={32} className="flex-shrink-0" decorative />
                       <div>
                         <p className="text-xs text-gray-400 uppercase tracking-wide">{fact.label}</p>
                         <p className="text-sm font-semibold text-harbor-blue">{fact.value}</p>
@@ -110,15 +94,17 @@ export default function Book() {
                   Location
                 </h3>
                 <ul className="space-y-3 text-sm">
-                  {[
-                    { icon: "📍", text: "Lake Geneva, Wisconsin" },
-                    { icon: "🏙️", text: "5 minutes to downtown Lake Geneva" },
-                    { icon: "🚗", text: "~1 hour from Chicago & Milwaukee" },
-                    { icon: "🌊", text: "Lake Como access included" },
-                    { icon: "⛳", text: "World-class golf within minutes" },
-                  ].map((item) => (
+                  {(
+                    [
+                      { icon: "map-pin", text: "Lake Geneva, Wisconsin" },
+                      { icon: "city-skyline", text: "5 minutes to downtown Lake Geneva" },
+                      { icon: "parking", text: "~1 hour from Chicago & Milwaukee" },
+                      { icon: "lake-access", text: "Lake Como access included" },
+                      { icon: "golf", text: "World-class golf within minutes" },
+                    ] satisfies { icon: IconName; text: string }[]
+                  ).map((item) => (
                     <li key={item.text} className="flex items-center gap-3 text-blue-100">
-                      <span>{item.icon}</span>
+                      <Icon name={item.icon} size={22} decorative />
                       <span>{item.text}</span>
                     </li>
                   ))}
@@ -146,9 +132,107 @@ export default function Book() {
   );
 }
 
+type SubmitStatus = "idle" | "submitting" | "success" | "error";
+
+function encode(data: Record<string, string>): string {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 function InquiryForm() {
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    // Client-side validation matches required attrs.
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+    if (!name || !email || !message) {
+      setStatus("error");
+      setErrorMessage("Please fill in your name, email, and message.");
+      return;
+    }
+
+    // Build the URL-encoded body Netlify Forms expects.
+    const body: Record<string, string> = { "form-name": "inquiry" };
+    formData.forEach((value, key) => {
+      body[key] = String(value);
+    });
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(body),
+      });
+      if (!response.ok) {
+        throw new Error(`Request failed (${response.status})`);
+      }
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or email us directly."
+      );
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="bg-white rounded-2xl p-8 shadow-sm border border-harbor-gold/30">
+        <h3 className="font-display text-2xl font-semibold text-harbor-blue mb-2">
+          Message sent — thank you!
+        </h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          We'll respond within 24 hours. In the meantime, you can also view the
+          calendar and book directly on{" "}
+          <a
+            href={PROPERTY.airbnbUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-harbor-gold hover:underline font-medium"
+          >
+            Airbnb
+          </a>
+          .
+        </p>
+      </div>
+    );
+  }
+
   return (
-    <Form method="post" className="space-y-5" id="inquiry-form">
+    <form
+      name="inquiry"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+      className="space-y-5"
+      id="inquiry-form"
+      noValidate
+    >
+      {/* Netlify Forms requires this hidden field so the edge can route the
+          submission to the matching form declared in public/__forms.html. */}
+      <input type="hidden" name="form-name" value="inquiry" />
+      {/* Honeypot: bots fill hidden fields; real users don't. */}
+      <p className="hidden">
+        <label>
+          Don't fill this out if you're human: <input name="bot-field" />
+        </label>
+      </p>
+
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-harbor-blue mb-1.5">
@@ -266,11 +350,18 @@ function InquiryForm() {
         />
       </div>
 
+      {status === "error" && errorMessage && (
+        <p className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-lg px-4 py-3">
+          {errorMessage}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="btn-gold w-full py-4 text-base"
+        disabled={status === "submitting"}
+        className="btn-gold w-full py-4 text-base disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Send Inquiry
+        {status === "submitting" ? "Sending…" : "Send Inquiry"}
       </button>
 
       <p className="text-xs text-gray-400 text-center">
@@ -285,6 +376,6 @@ function InquiryForm() {
         </a>
         .
       </p>
-    </Form>
+    </form>
   );
 }

@@ -23,17 +23,6 @@ export interface Review {
   avatar?: string;
 }
 
-export interface Inquiry {
-  name: string;
-  email: string;
-  phone?: string;
-  message: string;
-  check_in?: string;
-  check_out?: string;
-  guests?: number;
-  event_type?: "golf" | "bachelorette" | "family" | "other";
-}
-
 export interface Amenity {
   icon: string;
   label: string;

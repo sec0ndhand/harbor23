@@ -1,14 +1,10 @@
-import { data } from "react-router";
-import type { MetaFunction, LoaderFunctionArgs } from "react-router";
-import { useLoaderData } from "react-router";
+import type { MetaFunction } from "react-router";
 import { Star, ExternalLink } from "lucide-react";
 import { buildMeta, PAGE_META } from "~/lib/seo";
 import { PROPERTY, STATIC_REVIEWS } from "~/lib/property-data";
-import { getReviews } from "~/lib/pocketbase.server";
 import StarRating from "~/components/StarRating";
 import ReviewCard from "~/components/ReviewCard";
 import BookingCTA from "~/components/BookingCTA";
-import type { Review } from "~/lib/types";
 
 export const meta: MetaFunction = () => [
   ...buildMeta(PAGE_META.reviews),
@@ -34,11 +30,6 @@ export const meta: MetaFunction = () => [
   },
 ];
 
-export async function loader() {
-  const pbReviews = await getReviews(30);
-  return data({ pbReviews });
-}
-
 const RATING_CATEGORIES = [
   { label: "Cleanliness", score: 5.0 },
   { label: "Accuracy", score: 4.9 },
@@ -49,8 +40,7 @@ const RATING_CATEGORIES = [
 ];
 
 export default function Reviews() {
-  const { pbReviews } = useLoaderData<typeof loader>();
-  const allReviews: Review[] = [...STATIC_REVIEWS, ...pbReviews];
+  const allReviews = STATIC_REVIEWS;
 
   return (
     <>

@@ -1,7 +1,10 @@
 import type { LoaderFunctionArgs } from "react-router";
-import { getBlogPosts } from "~/lib/pocketbase.server";
+import { getBlogPosts } from "~/lib/blog";
 
-const SITE_URL = process.env.SITE_URL || "https://harbor23.com";
+// On Netlify deploy previews, SITE_URL is not set but URL is auto-injected
+// per-deploy (e.g. https://deploy-preview-42--harbor23.netlify.app).
+const SITE_URL =
+  process.env.SITE_URL || process.env.URL || "https://harbor23.com";
 
 const STATIC_ROUTES = [
   { path: "/", priority: "1.0", changefreq: "weekly" },

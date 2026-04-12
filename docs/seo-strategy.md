@@ -73,7 +73,7 @@ The site is built with server-side rendering (React Router v7 + SSR) for maximum
 
 ## Content Strategy (Blog)
 
-The blog at `/blog` (powered by PocketBase) is the primary long-term SEO lever. Target cadence: **2 posts/month minimum**.
+The blog at `/blog` (authored as Markdown files in `app/content/blog/`, parsed at build time) is the primary long-term SEO lever. Target cadence: **2 posts/month minimum**.
 
 ### Year 1 Content Calendar
 
