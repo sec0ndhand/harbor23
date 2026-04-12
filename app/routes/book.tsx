@@ -20,7 +20,7 @@ export default function Book() {
       <section className="relative h-[45vh] min-h-[380px] flex items-end pb-16">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${IMAGES.exterior2.url}?im_w=1400`}
+            src={IMAGES.exterior2.url}
             alt="Book Harbor on 23rd — Lake Geneva vacation rental"
             className="w-full h-full object-cover"
             loading="eager"

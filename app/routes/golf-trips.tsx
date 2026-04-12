@@ -99,7 +99,7 @@ export default function GolfTrips() {
       <section className="relative h-[70vh] min-h-[500px] flex items-end pb-20">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${IMAGES.backyard.url}?im_w=1600`}
+            src={IMAGES.backyard.url}
             alt="Golf trip Lake Geneva Wisconsin — Harbor on 23rd"
             className="w-full h-full object-cover"
             loading="eager"
@@ -225,7 +225,7 @@ export default function GolfTrips() {
             <div className="space-y-6">
               <div className="rounded-2xl overflow-hidden h-64 shadow-lg">
                 <img
-                  src={`${IMAGES.patio.url}?im_w=800`}
+                  src={IMAGES.patio.url}
                   alt="Harbor on 23rd outdoor patio — perfect for post-golf evenings"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -234,7 +234,7 @@ export default function GolfTrips() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden h-40 shadow">
                   <img
-                    src={`${IMAGES.firePit.url}?im_w=600`}
+                    src={IMAGES.firePit.url}
                     alt="Fire pit at Harbor on 23rd"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -242,7 +242,7 @@ export default function GolfTrips() {
                 </div>
                 <div className="rounded-xl overflow-hidden h-40 shadow">
                   <img
-                    src={`${IMAGES.gameRoom.url}?im_w=600`}
+                    src={IMAGES.gameRoom.url}
                     alt="Game room"
                     className="w-full h-full object-cover"
                     loading="lazy"

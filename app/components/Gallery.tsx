@@ -39,12 +39,14 @@ export default function Gallery({ images, heroLayout = false }: GalleryProps) {
             onClick={() => openLightbox(0)}
           >
             <img
-              src={`${images[0].url}?im_w=1200`}
+              src={images[0].url}
+              srcSet={images[0].srcSet}
+              sizes="(min-width: 640px) 50vw, 100vw"
               alt={images[0].alt}
               className="w-full h-full object-cover"
               loading="eager"
-              width={1200}
-              height={800}
+              width={images[0].width ?? 1200}
+              height={images[0].height ?? 800}
             />
           </div>
           {/* Four smaller images */}
@@ -55,12 +57,14 @@ export default function Gallery({ images, heroLayout = false }: GalleryProps) {
               onClick={() => openLightbox(i + 1)}
             >
               <img
-                src={`${img.url}?im_w=800`}
+                src={img.url}
+                srcSet={img.srcSet}
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                 alt={img.alt}
                 className="w-full h-full object-cover"
                 loading="lazy"
-                width={800}
-                height={600}
+                width={img.width ?? 800}
+                height={img.height ?? 600}
               />
               {/* Show all photos button on last tile */}
               {i === 3 && (
@@ -102,12 +106,14 @@ export default function Gallery({ images, heroLayout = false }: GalleryProps) {
             onClick={() => openLightbox(i)}
           >
             <img
-              src={`${img.url}?im_w=800`}
+              src={img.url}
+              srcSet={img.srcSet}
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
               alt={img.alt}
               className="w-full h-auto object-cover"
               loading={i < 6 ? "eager" : "lazy"}
-              width={800}
-              height={600}
+              width={img.width ?? 800}
+              height={img.height ?? 600}
             />
             {img.caption && (
               <p className="text-xs text-gray-500 px-2 py-1">{img.caption}</p>
@@ -152,7 +158,9 @@ function Lightbox({ images, idx, onClose, onPrev, onNext }: LightboxProps) {
         onClick={(e) => e.stopPropagation()}
       >
         <img
-          src={`${img.url}?im_w=1600`}
+          src={img.url}
+          srcSet={img.srcSet}
+          sizes="90vw"
           alt={img.alt}
           className="max-w-full max-h-[85vh] object-contain mx-auto rounded-lg"
         />

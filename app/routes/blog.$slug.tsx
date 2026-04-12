@@ -60,7 +60,7 @@ export default function BlogPost() {
         <section className="relative h-[55vh] min-h-[400px] flex items-end pb-16">
           <div className="absolute inset-0 z-0">
             <img
-              src={`${post.hero_image}?im_w=1400`}
+              src={post.hero_image}
               alt={post.title}
               className="w-full h-full object-cover"
               loading="eager"

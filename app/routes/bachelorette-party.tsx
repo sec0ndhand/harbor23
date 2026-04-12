@@ -105,7 +105,7 @@ export default function BachelorettePage() {
       <section className="relative h-[70vh] min-h-[500px] flex items-end pb-20">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${IMAGES.patio.url}?im_w=1600`}
+            src={IMAGES.patio.url}
             alt="Bachelorette party Lake Geneva — Harbor on 23rd"
             className="w-full h-full object-cover"
             loading="eager"
@@ -228,7 +228,7 @@ export default function BachelorettePage() {
             <div className="space-y-4">
               <div className="rounded-2xl overflow-hidden h-72 shadow-lg">
                 <img
-                  src={`${IMAGES.living1.url}?im_w=800`}
+                  src={IMAGES.living1.url}
                   alt="Harbor on 23rd living room — perfect for bachelorette parties"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -237,7 +237,7 @@ export default function BachelorettePage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden h-44 shadow">
                   <img
-                    src={`${IMAGES.firePit.url}?im_w=600`}
+                    src={IMAGES.firePit.url}
                     alt="Fire pit"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -245,7 +245,7 @@ export default function BachelorettePage() {
                 </div>
                 <div className="rounded-xl overflow-hidden h-44 shadow">
                   <img
-                    src={`${IMAGES.dining.url}?im_w=600`}
+                    src={IMAGES.dining.url}
                     alt="Dining area"
                     className="w-full h-full object-cover"
                     loading="lazy"

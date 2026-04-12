@@ -105,7 +105,7 @@ export default function TheHouse() {
               <div key={i} className="card">
                 <div className="h-48 img-overlay">
                   <img
-                    src={`${room.image.url}?im_w=600`}
+                    src={room.image.url}
                     alt={room.name}
                     className="w-full h-full object-cover"
                     loading="lazy"

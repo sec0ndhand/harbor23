@@ -148,7 +148,7 @@ export default function FamilyVacation() {
       <section className="relative h-[70vh] min-h-[500px] flex items-end pb-20">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${IMAGES.living1.url}?im_w=1600`}
+            src={IMAGES.living1.url}
             alt="Family vacation Lake Geneva Wisconsin — Harbor on 23rd"
             className="w-full h-full object-cover"
             loading="eager"
@@ -292,7 +292,7 @@ export default function FamilyVacation() {
               <div className="space-y-4">
                 <div className="rounded-xl overflow-hidden h-48">
                   <img
-                    src={`${IMAGES.bedroom1.url}?im_w=600`}
+                    src={IMAGES.bedroom1.url}
                     alt="Bunk beds — kids' favorite"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -300,7 +300,7 @@ export default function FamilyVacation() {
                 </div>
                 <div className="rounded-xl overflow-hidden h-36">
                   <img
-                    src={`${IMAGES.backyard.url}?im_w=600`}
+                    src={IMAGES.backyard.url}
                     alt="Fenced backyard"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -310,7 +310,7 @@ export default function FamilyVacation() {
               <div className="space-y-4 pt-6">
                 <div className="rounded-xl overflow-hidden h-36">
                   <img
-                    src={`${IMAGES.dining.url}?im_w=600`}
+                    src={IMAGES.dining.url}
                     alt="Large dining table for the whole family"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -318,7 +318,7 @@ export default function FamilyVacation() {
                 </div>
                 <div className="rounded-xl overflow-hidden h-48">
                   <img
-                    src={`${IMAGES.kitchen.url}?im_w=600`}
+                    src={IMAGES.kitchen.url}
                     alt="Full kitchen"
                     className="w-full h-full object-cover"
                     loading="lazy"

@@ -82,7 +82,7 @@ function PostCard({ post }: { post: BlogPost }) {
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
         <div className="relative h-52 overflow-hidden">
           <img
-            src={`${post.hero_image}?im_w=600`}
+            src={post.hero_image}
             alt={post.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"

@@ -37,8 +37,8 @@ describe("blog loader (static MDX/markdown)", () => {
     expect(post?.title).toContain("Weekend Getaway");
     // Markdown should be converted to HTML — we expect at least one heading.
     expect(post?.content).toMatch(/<h2/);
-    // The hero image key should resolve to a real Airbnb CDN URL.
-    expect(post?.hero_image).toMatch(/^https:\/\//);
+    // The hero image key resolves to a local path or a CDN URL.
+    expect(post?.hero_image).toMatch(/^(\/|https:\/\/)/);
   });
 
   it("getBlogPost() returns null for an unknown slug", async () => {

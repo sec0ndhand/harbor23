@@ -33,7 +33,7 @@ export default function Home() {
       <section className="relative h-screen min-h-[600px] flex items-end pb-20">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${IMAGES.hero.url}?im_w=1600`}
+            src={IMAGES.hero.url}
             alt="Harbor on 23rd — Lake Geneva vacation rental"
             className="w-full h-full object-cover"
             loading="eager"
@@ -203,7 +203,7 @@ export default function Home() {
               >
                 <div className="relative h-56 img-overlay">
                   <img
-                    src={`${card.image}?im_w=800`}
+                    src={card.image}
                     alt={card.label}
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -301,18 +301,18 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="rounded-xl overflow-hidden h-48 img-overlay">
-                  <img src={`${IMAGES.kitchen.url}?im_w=600`} alt="Kitchen" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={IMAGES.kitchen.url} alt="Kitchen" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="rounded-xl overflow-hidden h-36 img-overlay">
-                  <img src={`${IMAGES.gameRoom.url}?im_w=600`} alt="Game room" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={IMAGES.gameRoom.url} alt="Game room" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
               <div className="space-y-4 pt-6">
                 <div className="rounded-xl overflow-hidden h-36 img-overlay">
-                  <img src={`${IMAGES.firePit.url}?im_w=600`} alt="Fire pit" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={IMAGES.firePit.url} alt="Fire pit" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="rounded-xl overflow-hidden h-48 img-overlay">
-                  <img src={`${IMAGES.bedroom2.url}?im_w=600`} alt="Queen bedroom" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={IMAGES.bedroom2.url} alt="Queen bedroom" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -424,7 +424,7 @@ export default function Home() {
 
             <div className="relative rounded-2xl overflow-hidden h-80 lg:h-96 shadow-xl">
               <img
-                src={`${IMAGES.exterior2.url}?im_w=800`}
+                src={IMAGES.exterior2.url}
                 alt="Lake Geneva, Wisconsin"
                 className="w-full h-full object-cover"
                 loading="lazy"

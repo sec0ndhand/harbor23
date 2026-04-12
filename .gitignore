@@ -2,6 +2,7 @@ build/*
 node_modules/*
 .react-router/*
 .netlify/
+.cache/
 # Playwright artifacts — re-generated on every test run.
 test-results/
 playwright-report/

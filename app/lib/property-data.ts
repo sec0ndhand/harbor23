@@ -50,124 +50,57 @@ Blue Juniper is more than just a vacation rental — it's a place where you can 
     "Access to Lake Como is provided and available during the summer months. The lake association amenities include lakefront parks, a sandy beach, and a boat launch.",
 };
 
-// ── Image base URL ──────────────────────────────────────────────────────────
-const BASE =
-  "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzI0MTcyMzY2NDg2ODc2MDUx/original/";
+// ── Images — locally optimized from the Airbnb listing ──────────────────────
+// Photos are synced by scripts/sync-airbnb-photos.ts into public/images/listing/.
+// Each entry has a JPEG fallback + WebP srcSet for responsive loading.
+import { LISTING_PHOTOS } from "./listing-photos";
 
-function img(filename: string, alt: string, caption?: string): GalleryImage {
+/** Look up a listing photo by its original Airbnb CDN filename (UUID.jpeg). */
+function byFile(filename: string, alt: string, caption?: string): GalleryImage {
+  const photo = LISTING_PHOTOS.find((p) => p.originalFilename === filename);
+  if (photo) {
+    return {
+      url: photo.src,
+      alt,
+      caption,
+      srcSet: photo.srcSet,
+      width: photo.width,
+      height: photo.height,
+    };
+  }
+  // Fallback: serve from Airbnb CDN if local photo doesn't exist yet.
+  const BASE =
+    "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzI0MTcyMzY2NDg2ODc2MDUx/original/";
   return { url: `${BASE}${filename}`, alt, caption };
 }
 
 export const IMAGES = {
-  hero: img(
-    "0fb0755d-0c7e-4cb5-a990-779494ef9559.jpeg",
-    "Harbor on 23rd — a cozy 4-bedroom Lake Geneva Wisconsin vacation rental, exterior view"
-  ),
-  bedroom1: img(
-    "063c8df6-b539-4a50-ada5-9ad9896c6f54.jpeg",
-    "Kid-friendly bunk bedroom sleeping four at Harbor on 23rd"
-  ),
-  bedroom2: img(
-    "f51ddd26-8b58-405c-9e12-c1422fe7b864.jpeg",
-    "Queen bedroom with luxury bamboo sheets"
-  ),
-  bedroom3: img(
-    "4b3c9eb4-2211-42a4-897d-088121b3568c.jpeg",
-    "Cozy queen guest bedroom with soft lighting"
-  ),
-  bedroom4: img(
-    "1ab5b076-b11d-4f51-98f7-bc68ee7028a0.jpeg",
-    "Primary bedroom with a queen bed and bunk beds for families"
-  ),
-  living1: img(
-    "c5e54af7-a0f6-4ee3-87f3-935d8c178d33.jpeg",
-    "Spacious open-plan living room with sectional seating for groups of 14"
-  ),
-  living2: img(
-    "fb0bad41-d537-4aa6-bc3c-52ec5917bd90.jpeg",
-    "Living area with a gas fireplace and large windows"
-  ),
-  kitchen: img(
-    "3f21f60d-8c4c-4456-a241-11b26a56dcdf.jpeg",
-    "Full gourmet kitchen with gas stove, island and bar stools"
-  ),
-  dining: img(
-    "4f68c757-ca48-4528-88a1-6aaee44811e5.jpeg",
-    "Large dining table seating the whole group for family dinners"
-  ),
-  gameRoom: img(
-    "54ee0570-3922-4853-8a6c-b2d4088f3e66.jpeg",
-    "Basement game room with pool table — a rainy-day favorite"
-  ),
-  backyard: img(
-    "65cc9bdc-1308-4d01-a0df-1b09ddaab09f.jpeg",
-    "Fully fenced backyard with space for kids and pets"
-  ),
-  firePit: img(
-    "c3c3768f-3ce2-41fa-935b-0386eea9c425.jpeg",
-    "Stone fire pit in the backyard for evening gatherings and s'mores"
-  ),
-  patio: img(
-    "ab9428af-b4c7-48e6-b793-2b93ebebb492.jpeg",
-    "Back patio with outdoor seating for lake-days and sunsets"
-  ),
-  bathroom1: img(
-    "c60f05d4-cce4-40a5-a06f-a098af239499.jpeg",
-    "Full bathroom with a walk-in shower and modern fixtures"
-  ),
-  exterior2: img(
-    "654ff099-1a67-4ec1-986d-e20e0e7e4447.jpeg",
-    "Harbor on 23rd exterior with landscaped front yard"
-  ),
-  exterior3: img(
-    "34528ab5-b67e-4ada-a56d-6ebe2591b886.jpeg",
-    "Front of the Harbor on 23rd house, tree-lined street view"
-  ),
+  hero: byFile("0fb0755d-0c7e-4cb5-a990-779494ef9559.jpeg", "Harbor on 23rd — a cozy 4-bedroom Lake Geneva Wisconsin vacation rental, exterior view"),
+  bedroom1: byFile("063c8df6-b539-4a50-ada5-9ad9896c6f54.jpeg", "Kid-friendly bunk bedroom sleeping four at Harbor on 23rd"),
+  bedroom2: byFile("f51ddd26-8b58-405c-9e12-c1422fe7b864.jpeg", "Queen bedroom with luxury bamboo sheets"),
+  bedroom3: byFile("4b3c9eb4-2211-42a4-897d-088121b3568c.jpeg", "Cozy queen guest bedroom with soft lighting"),
+  bedroom4: byFile("1ab5b076-b11d-4f51-98f7-bc68ee7028a0.jpeg", "Primary bedroom with a queen bed and bunk beds for families"),
+  living1: byFile("c5e54af7-a0f6-4ee3-87f3-935d8c178d33.jpeg", "Spacious open-plan living room with sectional seating for groups of 14"),
+  living2: byFile("fb0bad41-d537-4aa6-bc3c-52ec5917bd90.jpeg", "Living area with a gas fireplace and large windows"),
+  kitchen: byFile("3f21f60d-8c4c-4456-a241-11b26a56dcdf.jpeg", "Full gourmet kitchen with gas stove, island and bar stools"),
+  dining: byFile("4f68c757-ca48-4528-88a1-6aaee44811e5.jpeg", "Large dining table seating the whole group for family dinners"),
+  gameRoom: byFile("54ee0570-3922-4853-8a6c-b2d4088f3e66.jpeg", "Basement game room with pool table — a rainy-day favorite"),
+  backyard: byFile("65cc9bdc-1308-4d01-a0df-1b09ddaab09f.jpeg", "Fully fenced backyard with space for kids and pets"),
+  firePit: byFile("c3c3768f-3ce2-41fa-935b-0386eea9c425.jpeg", "Stone fire pit in the backyard for evening gatherings and s'mores"),
+  patio: byFile("ab9428af-b4c7-48e6-b793-2b93ebebb492.jpeg", "Back patio with outdoor seating for lake-days and sunsets"),
+  bathroom1: byFile("c60f05d4-cce4-40a5-a06f-a098af239499.jpeg", "Full bathroom with a walk-in shower and modern fixtures"),
+  exterior2: byFile("654ff099-1a67-4ec1-986d-e20e0e7e4447.jpeg", "Harbor on 23rd exterior with landscaped front yard"),
+  exterior3: byFile("34528ab5-b67e-4ada-a56d-6ebe2591b886.jpeg", "Front of the Harbor on 23rd house, tree-lined street view"),
 };
 
-export const GALLERY: GalleryImage[] = [
-  img("0fb0755d-0c7e-4cb5-a990-779494ef9559.jpeg", "Harbor on 23rd exterior"),
-  img("c5e54af7-a0f6-4ee3-87f3-935d8c178d33.jpeg", "Spacious living room"),
-  img("3f21f60d-8c4c-4456-a241-11b26a56dcdf.jpeg", "Full kitchen with stainless appliances"),
-  img("54ee0570-3922-4853-8a6c-b2d4088f3e66.jpeg", "Game room"),
-  img("4f68c757-ca48-4528-88a1-6aaee44811e5.jpeg", "Dining room"),
-  img("063c8df6-b539-4a50-ada5-9ad9896c6f54.jpeg", "Bunk bedroom – sleeps 4"),
-  img("f51ddd26-8b58-405c-9e12-c1422fe7b864.jpeg", "Queen bedroom"),
-  img("4b3c9eb4-2211-42a4-897d-088121b3568c.jpeg", "Cozy queen bedroom"),
-  img("1ab5b076-b11d-4f51-98f7-bc68ee7028a0.jpeg", "Bedroom 4 – queen + bunks"),
-  img("c3c3768f-3ce2-41fa-935b-0386eea9c425.jpeg", "Fire pit area"),
-  img("65cc9bdc-1308-4d01-a0df-1b09ddaab09f.jpeg", "Fenced backyard"),
-  img("ab9428af-b4c7-48e6-b793-2b93ebebb492.jpeg", "Outdoor patio"),
-  img("c60f05d4-cce4-40a5-a06f-a098af239499.jpeg", "Bathroom"),
-  img("654ff099-1a67-4ec1-986d-e20e0e7e4447.jpeg", "Exterior – driveway view"),
-  img("34528ab5-b67e-4ada-a56d-6ebe2591b886.jpeg", "Front of house"),
-  img("de53f7f4-e676-446a-95a5-dc052c9bf1dd.jpeg", "Bedroom detail"),
-  img("8a47fc3e-4416-427a-b477-12eda2798e89.jpeg", "Bedroom 2 detail"),
-  img("5a438854-66cd-472f-9eb7-ab3798f2ab41.jpeg", "Living area detail"),
-  img("72fc2ea3-2d08-4265-9f88-86b17be237d3.jpeg", "Kitchen detail"),
-  img("67d653c0-ddb0-4f2b-95a5-0b86744b8a91.jpeg", "Dining detail"),
-  img("290cbe01-65ff-4892-b06c-598058c8b647.jpeg", "Outdoor space"),
-  img("c8f42df2-7565-454e-b00b-cc50d4598725.jpeg", "Backyard view"),
-  img("d226d74d-5ee8-4555-b383-b043c08e99bf.jpeg", "Another view"),
-  img("66883da3-c713-453d-8a8f-25f47c3ee16d.jpeg", "Interior"),
-  img("e5a1e4de-9142-46a2-972f-04b35d855bb3.jpeg", "Property feature"),
-  img("533bac5d-b460-4acf-9e10-af7cafd8ffc1.jpeg", "Property feature"),
-  img("555f0872-4aa0-4981-a249-0da84aae8d06.jpeg", "Property feature"),
-  img("f647bdd5-d4f4-4463-94d8-1cc8047ed49f.jpeg", "Exterior detail"),
-  img("5497032d-b9cf-4a19-9376-a4f372d26642.jpeg", "Living space"),
-  img("fe945c5a-edcb-4333-99c4-0aec29b54fc0.jpeg", "Room detail"),
-  img("61675b62-9037-4e19-824e-9fa73aaac4ad.jpeg", "Room detail"),
-  img("96dbb870-122b-4165-8d2d-487bd40d84e7.jpeg", "Interior space"),
-  img("45f63b49-f51f-4a6c-ac55-1ee128768786.jpeg", "Interior space"),
-  img("4699cdd9-dd98-4d70-a733-db07e9c50884.jpeg", "Interior space"),
-  img("90e0b39b-7f43-4550-98b8-1e21e9a0c879.jpeg", "Outdoor space"),
-  img("b8aaeac1-fde4-4cac-9c7c-bb7ee775ef9a.jpeg", "Property exterior"),
-  img("9283282c-08be-4b0d-a6fb-43fc0cf33357.jpeg", "Property detail"),
-  img("9ac3ff73-e759-4cd3-b37e-82b62176e326.jpeg", "Property detail"),
-  img("8a1769a3-ea0a-4a91-b2b3-11fb75b19aaf.jpeg", "Property view"),
-  img("b777a918-a22e-4ffb-af75-d067bb52307b.jpeg", "Final view"),
-  img("94c81ec9-840b-402a-9256-5967b4331fe5.jpeg", "Final view"),
-];
+// The full gallery is every photo from the Airbnb listing, served locally.
+export const GALLERY: GalleryImage[] = LISTING_PHOTOS.map((p) => ({
+  url: p.src,
+  alt: p.alt,
+  srcSet: p.srcSet,
+  width: p.width,
+  height: p.height,
+}));
 
 // ── Bedrooms ────────────────────────────────────────────────────────────────
 export const BEDROOMS = [
