@@ -151,44 +151,45 @@ export const BEDROOMS = [
 ];
 
 // ── Amenities ───────────────────────────────────────────────────────────────
+// `icon` is an IconName key resolved by app/lib/icons.tsx at render time.
 export const AMENITIES: Amenity[] = [
   // Outdoors & Lake
-  { icon: "🌊", label: "Lake access (Lake Como)", category: "Outdoors" },
-  { icon: "🏖️", label: "Private beach access", category: "Outdoors" },
-  { icon: "🔥", label: "Fire pit", category: "Outdoors" },
-  { icon: "🌿", label: "Fully fenced backyard", category: "Outdoors" },
-  { icon: "🪑", label: "Outdoor furniture & patio", category: "Outdoors" },
-  { icon: "🔩", label: "BBQ grill (charcoal)", category: "Outdoors" },
+  { icon: "lake-access", label: "Lake access (Lake Como)", category: "Outdoors" },
+  { icon: "private-beach", label: "Private beach access", category: "Outdoors" },
+  { icon: "fire-pit", label: "Fire pit", category: "Outdoors" },
+  { icon: "fenced-backyard", label: "Fully fenced backyard", category: "Outdoors" },
+  { icon: "patio", label: "Outdoor furniture & patio", category: "Outdoors" },
+  { icon: "grill", label: "BBQ grill (charcoal)", category: "Outdoors" },
   // Entertainment
-  { icon: "🎮", label: "Game room", category: "Entertainment" },
-  { icon: "📺", label: "HDTV with Netflix, Hulu, Disney+", category: "Entertainment" },
-  { icon: "🎲", label: "Board games & puzzles", category: "Entertainment" },
-  { icon: "📚", label: "Books, toys for all ages", category: "Entertainment" },
+  { icon: "game-room", label: "Game room", category: "Entertainment" },
+  { icon: "hdtv", label: "HDTV with Netflix, Hulu, Disney+", category: "Entertainment" },
+  { icon: "board-games", label: "Board games & puzzles", category: "Entertainment" },
+  { icon: "books-toys", label: "Books, toys for all ages", category: "Entertainment" },
   // Kitchen
-  { icon: "🍳", label: "Full gourmet kitchen", category: "Kitchen" },
-  { icon: "🥘", label: "Whirlpool gas stove & oven", category: "Kitchen" },
-  { icon: "❄️", label: "Full-size refrigerator + mini fridge", category: "Kitchen" },
-  { icon: "🫙", label: "Dishwasher", category: "Kitchen" },
-  { icon: "☕", label: "Keurig coffee maker", category: "Kitchen" },
-  { icon: "🍷", label: "Wine glasses & blender", category: "Kitchen" },
+  { icon: "gourmet-kitchen", label: "Full gourmet kitchen", category: "Kitchen" },
+  { icon: "gas-stove", label: "Whirlpool gas stove & oven", category: "Kitchen" },
+  { icon: "refrigerator", label: "Full-size refrigerator + mini fridge", category: "Kitchen" },
+  { icon: "dishwasher", label: "Dishwasher", category: "Kitchen" },
+  { icon: "coffee", label: "Keurig coffee maker", category: "Kitchen" },
+  { icon: "wine-glasses", label: "Wine glasses & blender", category: "Kitchen" },
   // Comfort
-  { icon: "🛏️", label: "Luxury Malouf bamboo/Tencel sheets", category: "Comfort" },
-  { icon: "🔥", label: "Gas indoor fireplace", category: "Comfort" },
-  { icon: "❄️", label: "Central A/C & heat", category: "Comfort" },
-  { icon: "🌑", label: "Room-darkening shades", category: "Comfort" },
-  { icon: "🧺", label: "Washer & dryer in-unit", category: "Comfort" },
-  { icon: "💨", label: "Hair dryer & iron", category: "Comfort" },
+  { icon: "bedroom", label: "Luxury Malouf bamboo/Tencel sheets", category: "Comfort" },
+  { icon: "fireplace", label: "Gas indoor fireplace", category: "Comfort" },
+  { icon: "air-conditioning", label: "Central A/C & heat", category: "Comfort" },
+  { icon: "blackout-shades", label: "Room-darkening shades", category: "Comfort" },
+  { icon: "washer-dryer", label: "Washer & dryer in-unit", category: "Comfort" },
+  { icon: "hair-dryer", label: "Hair dryer & iron", category: "Comfort" },
   // Family
-  { icon: "👶", label: "Crib & Pack 'n play available", category: "Family" },
-  { icon: "🧸", label: "Children's toys & books", category: "Family" },
-  { icon: "🥄", label: "Children's dinnerware", category: "Family" },
+  { icon: "crib", label: "Crib & Pack 'n play available", category: "Family" },
+  { icon: "toys", label: "Children's toys & books", category: "Family" },
+  { icon: "kids-dinnerware", label: "Children's dinnerware", category: "Family" },
   // Parking & Access
-  { icon: "🚗", label: "Free parking (2 garage + 3-4 driveway)", category: "Parking" },
-  { icon: "🔑", label: "Self check-in / keypad entry", category: "Parking" },
-  { icon: "📶", label: "High-speed WiFi", category: "Parking" },
+  { icon: "parking", label: "Free parking (2 garage + 3-4 driveway)", category: "Parking" },
+  { icon: "self-checkin", label: "Self check-in / keypad entry", category: "Parking" },
+  { icon: "wifi", label: "High-speed WiFi", category: "Parking" },
   // Safety
-  { icon: "🔥", label: "Fire extinguisher & first aid kit", category: "Safety" },
-  { icon: "💨", label: "Smoke & CO detectors", category: "Safety" },
+  { icon: "fire-safety", label: "Fire extinguisher & first aid kit", category: "Safety" },
+  { icon: "smoke-detector", label: "Smoke & CO detectors", category: "Safety" },
 ];
 
 export const AMENITY_CATEGORIES = [

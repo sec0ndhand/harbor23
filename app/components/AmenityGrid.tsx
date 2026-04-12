@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AMENITIES, AMENITY_CATEGORIES } from "~/lib/property-data";
+import { Icon } from "~/lib/icons";
 
 interface AmenityGridProps {
   filterCategory?: string;
@@ -37,9 +38,12 @@ export default function AmenityGrid({ filterCategory, showFilter = false, limit 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {filtered.map((amenity, i) => (
           <div key={i} className="amenity-item">
-            <span className="text-2xl flex-shrink-0" aria-hidden="true">
-              {amenity.icon}
-            </span>
+            <Icon
+              name={amenity.icon}
+              size={32}
+              className="flex-shrink-0"
+              decorative
+            />
             <div>
               <span className="text-sm font-medium text-gray-800">{amenity.label}</span>
               <span className="block text-xs text-gray-400">{amenity.category}</span>

@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { buildMeta, PAGE_META } from "~/lib/seo";
 import { PROPERTY, GOLF_COURSES, ATTRACTIONS, IMAGES } from "~/lib/property-data";
 import BookingCTA from "~/components/BookingCTA";
+import { Icon, type IconName } from "~/lib/icons";
 
 export const meta: MetaFunction = () => buildMeta(PAGE_META.location);
 
@@ -27,14 +28,16 @@ export default function Location() {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { from: "Downtown Lake Geneva", distance: "5 min drive", icon: "🏘️" },
-              { from: "Chicago, IL", distance: "~1 hr south", icon: "🏙️" },
-              { from: "Milwaukee, WI", distance: "~1 hr north", icon: "🏙️" },
-              { from: "Lake Geneva Beach", distance: "3 miles", icon: "🏖️" },
-            ].map((d) => (
+            {(
+              [
+                { from: "Downtown Lake Geneva", distance: "5 min drive", icon: "house" },
+                { from: "Chicago, IL", distance: "~1 hr south", icon: "city-skyline" },
+                { from: "Milwaukee, WI", distance: "~1 hr north", icon: "city-skyline" },
+                { from: "Lake Geneva Beach", distance: "3 miles", icon: "private-beach" },
+              ] satisfies { from: string; distance: string; icon: IconName }[]
+            ).map((d) => (
               <div key={d.from} className="text-center p-6 bg-harbor-warm rounded-xl">
-                <span className="text-4xl block mb-3">{d.icon}</span>
+                <Icon name={d.icon} size={64} className="mx-auto mb-3" decorative />
                 <p className="text-2xl font-bold text-harbor-blue">{d.distance}</p>
                 <p className="text-xs text-gray-500 mt-1 font-medium">{d.from}</p>
               </div>
@@ -72,11 +75,17 @@ export default function Location() {
 
           <div className="mt-8 grid sm:grid-cols-2 gap-4">
             <div className="bg-harbor-blue/10 rounded-xl p-5 border-l-4 border-harbor-gold">
-              <p className="font-semibold text-harbor-blue text-sm mb-2">🌊 Lake Como Access Included</p>
+              <p className="font-semibold text-harbor-blue text-sm mb-2 flex items-center gap-2">
+                <Icon name="lake-access" size={24} decorative />
+                Lake Como Access Included
+              </p>
               <p className="text-sm text-gray-600">{PROPERTY.lakeAccessNote}</p>
             </div>
             <div className="bg-harbor-blue/10 rounded-xl p-5 border-l-4 border-harbor-sage">
-              <p className="font-semibold text-harbor-blue text-sm mb-2">📍 Neighborhood</p>
+              <p className="font-semibold text-harbor-blue text-sm mb-2 flex items-center gap-2">
+                <Icon name="map-pin" size={24} decorative />
+                Neighborhood
+              </p>
               <p className="text-sm text-gray-600">
                 Quiet residential neighborhood with free street parking. 2 garage spots + 3-4
                 driveway spots.
@@ -148,9 +157,15 @@ export default function Location() {
             neighborhood near Lake Como, just minutes from downtown Lake Geneva.
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-200">
-            <span>📍 Lake Como neighborhood</span>
-            <span>🚗 Easy highway access from I-43 & I-90</span>
-            <span>✈️ 60 mi from Chicago O'Hare</span>
+            <span className="inline-flex items-center gap-2">
+              <Icon name="map-pin" size={22} decorative /> Lake Como neighborhood
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <Icon name="parking" size={22} decorative /> Easy highway access from I-43 &amp; I-90
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <Icon name="city-skyline" size={22} decorative /> 60 mi from Chicago O'Hare
+            </span>
           </div>
         </div>
       </section>

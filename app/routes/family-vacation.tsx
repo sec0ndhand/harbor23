@@ -6,99 +6,100 @@ import { PROPERTY, IMAGES, ATTRACTIONS, STATIC_REVIEWS, getLodgingSchema } from 
 import BookingCTA from "~/components/BookingCTA";
 import StarRating from "~/components/StarRating";
 import ReviewCard from "~/components/ReviewCard";
+import { Icon, type IconName } from "~/lib/icons";
 
 export const meta: MetaFunction = () => [
   ...buildMeta(PAGE_META.family),
   { "script:ld+json": getLodgingSchema() },
 ];
 
-const FAMILY_FEATURES = [
+const FAMILY_FEATURES: { icon: IconName; title: string; description: string }[] = [
   {
-    icon: "👶",
+    icon: "crib",
     title: "Baby & Toddler Ready",
     description:
       "Pack 'n play, crib, high chair, children's dinnerware, and toys for ages 0–10. Arrive with the kids — we've got the rest.",
   },
   {
-    icon: "🌿",
+    icon: "fenced-backyard",
     title: "Fully Fenced Backyard",
     description:
       "Kids can run, play, and explore the fenced yard while grown-ups relax on the patio. Safe and spacious.",
   },
   {
-    icon: "🛏️",
+    icon: "bedroom",
     title: "Sleeping Configurations for All Ages",
     description:
       "Three queen beds, bunk rooms (kids love them), and a couch sleeper. Every family member has their own comfortable spot.",
   },
   {
-    icon: "🌊",
+    icon: "lake-access",
     title: "Lake Access All Summer",
     description:
       "Lake Como's sandy beach and boat launch are available during summer months. Build sandcastles, launch kayaks, soak it all in.",
   },
   {
-    icon: "🎮",
+    icon: "game-room",
     title: "Rainy Day? No Problem.",
     description:
       "Game room, board games, puzzles, books, and toys keep kids (and adults) entertained on cloudy days.",
   },
   {
-    icon: "🍳",
+    icon: "gourmet-kitchen",
     title: "Cook Your Own Family Meals",
     description:
       "The full kitchen with a gas stove, big dining table, and charcoal grill means home-cooked family dinners at a fraction of restaurant prices.",
   },
 ];
 
-const FAMILY_ACTIVITIES = [
+const FAMILY_ACTIVITIES: { icon: IconName; name: string; age: string; note: string }[] = [
   {
     name: "Lake Como Beach",
     age: "All ages",
     note: "Included with rental",
-    icon: "🏖️",
+    icon: "private-beach",
   },
   {
     name: "Hillmoor Golf Park (mini golf, batting cages)",
     age: "Ages 4+",
     note: "5 min drive",
-    icon: "⛳",
+    icon: "golf",
   },
   {
     name: "Lake Geneva Cruise Line",
     age: "All ages",
     note: "5 min drive",
-    icon: "⛴️",
+    icon: "boat-tour",
   },
   {
     name: "Geneva Lake Shore Path",
     age: "All ages",
     note: "21-mile public path",
-    icon: "🚶",
+    icon: "walking-path",
   },
   {
     name: "Downtown Lake Geneva Ice Cream & Shops",
     age: "All ages",
     note: "5 min drive",
-    icon: "🍦",
+    icon: "ice-cream",
   },
   {
     name: "Yerkes Observatory",
     age: "Ages 6+",
     note: "15 min drive",
-    icon: "🔭",
+    icon: "observatory",
   },
   {
     name: "Grand Geneva Ski & Snow Tubing (winter)",
     age: "Ages 5+",
     note: "8 min drive",
-    icon: "⛷️",
+    icon: "skiing",
   },
   {
     name: "Alpine Valley Music Theatre",
     age: "All ages",
     note: "20 min drive",
-    icon: "🎶",
+    icon: "live-music",
   },
 ];
 
@@ -220,7 +221,7 @@ export default function FamilyVacation() {
                 key={feature.title}
                 className="bg-white rounded-2xl p-8 shadow-sm border border-gray-50 hover:shadow-md transition-shadow"
               >
-                <span className="text-4xl mb-4 block">{feature.icon}</span>
+                <Icon name={feature.icon} size={64} className="mb-4" decorative />
                 <h3 className="font-display text-xl font-semibold text-harbor-blue mb-3">
                   {feature.title}
                 </h3>
@@ -259,16 +260,18 @@ export default function FamilyVacation() {
               </div>
 
               <div className="mt-8 grid grid-cols-2 gap-4">
-                {[
-                  { icon: "👶", label: "Crib & Pack 'n Play" },
-                  { icon: "🧸", label: "Toys & Books" },
-                  { icon: "🌿", label: "Fenced Backyard" },
-                  { icon: "🛏️", label: "Bunk Rooms Kids Love" },
-                  { icon: "🍳", label: "Full Kitchen" },
-                  { icon: "🌊", label: "Lake Access Included" },
-                ].map((item) => (
+                {(
+                  [
+                    { icon: "crib", label: "Crib & Pack 'n Play" },
+                    { icon: "toys", label: "Toys & Books" },
+                    { icon: "fenced-backyard", label: "Fenced Backyard" },
+                    { icon: "bedroom", label: "Bunk Rooms Kids Love" },
+                    { icon: "gourmet-kitchen", label: "Full Kitchen" },
+                    { icon: "lake-access", label: "Lake Access Included" },
+                  ] satisfies { icon: IconName; label: string }[]
+                ).map((item) => (
                   <div key={item.label} className="flex items-center gap-3">
-                    <span className="text-xl">{item.icon}</span>
+                    <Icon name={item.icon} size={28} decorative />
                     <span className="text-sm font-medium text-gray-700">{item.label}</span>
                   </div>
                 ))}
@@ -345,7 +348,7 @@ export default function FamilyVacation() {
                 key={activity.name}
                 className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow"
               >
-                <span className="text-3xl mb-3 block">{activity.icon}</span>
+                <Icon name={activity.icon} size={48} className="mb-3" decorative />
                 <h3 className="font-semibold text-harbor-blue text-sm mb-1">{activity.name}</h3>
                 <p className="text-xs text-harbor-sage font-medium">{activity.age}</p>
                 <p className="text-xs text-gray-400 mt-1">{activity.note}</p>

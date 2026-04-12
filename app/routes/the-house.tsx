@@ -5,6 +5,7 @@ import { PROPERTY, GALLERY, BEDROOMS, IMAGES } from "~/lib/property-data";
 import Gallery from "~/components/Gallery";
 import BookingCTA from "~/components/BookingCTA";
 import StarRating from "~/components/StarRating";
+import { Icon, type IconName } from "~/lib/icons";
 
 export const meta: MetaFunction = () => buildMeta(PAGE_META.theHouse);
 
@@ -83,7 +84,10 @@ export default function TheHouse() {
             ))}
           </div>
           <div className="mt-6 p-5 bg-harbor-blue/10 rounded-xl border-l-4 border-harbor-gold">
-            <p className="text-sm font-semibold text-harbor-blue mb-1">🌊 Lake Access</p>
+            <p className="text-sm font-semibold text-harbor-blue mb-1 flex items-center gap-2">
+              <Icon name="lake-access" size={24} decorative />
+              Lake Access
+            </p>
             <p className="text-sm text-gray-600">{PROPERTY.lakeAccessNote}</p>
           </div>
         </div>
@@ -110,7 +114,7 @@ export default function TheHouse() {
                 <div className="p-5">
                   <h3 className="font-semibold text-harbor-blue text-lg">{room.name}</h3>
                   <p className="text-gray-500 text-sm mt-1 flex items-center gap-1.5">
-                    <span>🛏️</span> {room.description}
+                    <Icon name="bedroom" size={18} decorative /> {room.description}
                   </p>
                 </div>
               </div>
@@ -134,18 +138,20 @@ export default function TheHouse() {
                 House Rules
               </h2>
               <div className="space-y-4">
-                {[
-                  { icon: "⏰", label: "Check-in", value: `After ${PROPERTY.checkIn}` },
-                  { icon: "⏰", label: "Check-out", value: `Before ${PROPERTY.checkOut}` },
-                  { icon: "👥", label: "Max guests", value: `${PROPERTY.maxGuests} guests` },
-                  { icon: "🔕", label: "Quiet hours", value: "10:00 PM – 8:00 AM" },
-                  { icon: "🚫", label: "No pets", value: "Pets not allowed" },
-                  { icon: "🚫", label: "No smoking", value: "Smoke-free property" },
-                  { icon: "🚫", label: "No parties", value: "No events beyond guest limit" },
-                  { icon: "🔑", label: "Self check-in", value: "Keypad entry — no meet & greet needed" },
-                ].map((rule) => (
+                {(
+                  [
+                    { icon: "self-checkin", label: "Check-in", value: `After ${PROPERTY.checkIn}` },
+                    { icon: "door", label: "Check-out", value: `Before ${PROPERTY.checkOut}` },
+                    { icon: "guests", label: "Max guests", value: `${PROPERTY.maxGuests} guests` },
+                    { icon: "quiet-hours", label: "Quiet hours", value: "10:00 PM – 8:00 AM" },
+                    { icon: "no-pets", label: "No pets", value: "Pets not allowed" },
+                    { icon: "no-smoking", label: "No smoking", value: "Smoke-free property" },
+                    { icon: "no-smoking", label: "No parties", value: "No events beyond guest limit" },
+                    { icon: "self-checkin", label: "Self check-in", value: "Keypad entry — no meet & greet needed" },
+                  ] satisfies { icon: IconName; label: string; value: string }[]
+                ).map((rule) => (
                   <div key={rule.label} className="flex items-center gap-4 py-2 border-b border-gray-100">
-                    <span className="text-xl w-8 flex-shrink-0">{rule.icon}</span>
+                    <Icon name={rule.icon} size={28} className="flex-shrink-0" decorative />
                     <span className="text-sm font-medium text-gray-500 w-28 flex-shrink-0">{rule.label}</span>
                     <span className="text-sm font-semibold text-gray-800">{rule.value}</span>
                   </div>

@@ -6,45 +6,46 @@ import { PROPERTY, IMAGES, ATTRACTIONS, STATIC_REVIEWS, getLodgingSchema } from 
 import BookingCTA from "~/components/BookingCTA";
 import StarRating from "~/components/StarRating";
 import ReviewCard from "~/components/ReviewCard";
+import { Icon, type IconName } from "~/lib/icons";
 
 export const meta: MetaFunction = () => [
   ...buildMeta(PAGE_META.bachelorette),
   { "script:ld+json": getLodgingSchema() },
 ];
 
-const BACH_FEATURES = [
+const BACH_FEATURES: { icon: IconName; title: string; description: string }[] = [
   {
-    icon: "🥂",
+    icon: "champagne-toast",
     title: "Your Own Private Estate",
     description:
       "No shared walls, no hotel lobbies, no strangers. Harbor on 23rd is exclusively yours — all 4 bedrooms for your crew.",
   },
   {
-    icon: "🎮",
+    icon: "game-room",
     title: "Built-In Entertainment",
     description:
       "Game room, fire pit, outdoor patio, and a huge dining table. Every phase of the evening, covered.",
   },
   {
-    icon: "🍷",
+    icon: "wine-dining",
     title: "Wine & Dine Downtown",
     description:
       "Lake Geneva Winery, rooftop bars, gourmet restaurants — all 5 minutes away. Mornings at the house, evenings on the town.",
   },
   {
-    icon: "🌊",
+    icon: "lake-access",
     title: "Lake Access Included",
     description:
       "Lake Como's sandy beach and boat launch are available all summer. Golden hour by the water hits different when you're celebrating.",
   },
   {
-    icon: "🛏️",
+    icon: "bedroom",
     title: "Luxury Beds for Every Guest",
     description:
       "Three queen beds plus bunk options. Everyone has their own space to glam up and wind down. No air mattresses here.",
   },
   {
-    icon: "✨",
+    icon: "sparkle",
     title: "Spa & Pampering Nearby",
     description:
       "The Abbey Resort's Avani Spa is 10 minutes away. Add a spa day to your itinerary for the full bachelorette experience.",
@@ -177,7 +178,7 @@ export default function BachelorettePage() {
                 key={feature.title}
                 className="bg-white rounded-2xl p-8 shadow-sm border border-gray-50 hover:shadow-md transition-shadow"
               >
-                <span className="text-4xl mb-4 block">{feature.icon}</span>
+                <Icon name={feature.icon} size={64} className="mb-4" decorative />
                 <h3 className="font-display text-xl font-semibold text-harbor-blue mb-3">
                   {feature.title}
                 </h3>

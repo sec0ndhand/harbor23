@@ -3,6 +3,7 @@ import { buildMeta, PAGE_META } from "~/lib/seo";
 import { AMENITIES, AMENITY_CATEGORIES } from "~/lib/property-data";
 import AmenityGrid from "~/components/AmenityGrid";
 import BookingCTA from "~/components/BookingCTA";
+import { Icon, type IconName } from "~/lib/icons";
 
 export const meta: MetaFunction = () => buildMeta(PAGE_META.amenities);
 
@@ -27,14 +28,16 @@ export default function Amenities() {
       <section className="py-12 bg-harbor-warm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              { icon: "🌊", label: "Lake Como Access", sub: "Sandy beach & boat launch" },
-              { icon: "🎮", label: "Game Room", sub: "Entertainment for all ages" },
-              { icon: "🔥", label: "Fire Pit", sub: "Perfect for evening gatherings" },
-              { icon: "🍳", label: "Full Kitchen", sub: "Gas stove, grill & more" },
-            ].map((h) => (
+            {(
+              [
+                { icon: "lake-access", label: "Lake Como Access", sub: "Sandy beach & boat launch" },
+                { icon: "game-room", label: "Game Room", sub: "Entertainment for all ages" },
+                { icon: "fire-pit", label: "Fire Pit", sub: "Perfect for evening gatherings" },
+                { icon: "gourmet-kitchen", label: "Full Kitchen", sub: "Gas stove, grill & more" },
+              ] satisfies { icon: IconName; label: string; sub: string }[]
+            ).map((h) => (
               <div key={h.label} className="bg-white rounded-xl p-5 text-center shadow-sm">
-                <span className="text-3xl block mb-2">{h.icon}</span>
+                <Icon name={h.icon} size={48} className="mx-auto mb-2" decorative />
                 <p className="text-sm font-semibold text-harbor-blue">{h.label}</p>
                 <p className="text-xs text-gray-400 mt-1">{h.sub}</p>
               </div>

@@ -14,6 +14,7 @@ import BookingCTA from "~/components/BookingCTA";
 import StarRating from "~/components/StarRating";
 import ReviewCard from "~/components/ReviewCard";
 import Gallery from "~/components/Gallery";
+import { Icon, type IconName } from "~/lib/icons";
 
 export const meta: MetaFunction = () => [
   ...buildMeta(PAGE_META.home),
@@ -117,21 +118,28 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: "🏠", title: `${PROPERTY.bedrooms} Bedrooms`, sub: "Multiple sleeping configurations" },
-              { icon: "👥", title: `Sleeps ${PROPERTY.maxGuests}`, sub: "Queen beds & bunk rooms" },
-              { icon: "🌊", title: "Lake Access", sub: "Lake Como — sandy beach & boat launch" },
-              { icon: "🎮", title: "Game Room", sub: "Evening entertainment included" },
-              { icon: "🔥", title: "Fire Pit", sub: "S'mores under the stars" },
-              { icon: "🍳", title: "Full Kitchen", sub: "Gas stove, grill & everything you need" },
-              { icon: "📍", title: "5 Min to Town", sub: "Walk to restaurants, shops & the lake" },
-              { icon: "🚗", title: "Free Parking", sub: "Garage + driveway fits 5-6 cars" },
-            ].map((item) => (
+            {(
+              [
+                { icon: "house", title: `${PROPERTY.bedrooms} Bedrooms`, sub: "Multiple sleeping configurations" },
+                { icon: "guests", title: `Sleeps ${PROPERTY.maxGuests}`, sub: "Queen beds & bunk rooms" },
+                { icon: "lake-access", title: "Lake Access", sub: "Lake Como — sandy beach & boat launch" },
+                { icon: "game-room", title: "Game Room", sub: "Evening entertainment included" },
+                { icon: "fire-pit", title: "Fire Pit", sub: "S'mores under the stars" },
+                { icon: "gourmet-kitchen", title: "Full Kitchen", sub: "Gas stove, grill & everything you need" },
+                { icon: "map-pin", title: "5 Min to Town", sub: "Walk to restaurants, shops & the lake" },
+                { icon: "parking", title: "Free Parking", sub: "Garage + driveway fits 5-6 cars" },
+              ] satisfies { icon: IconName; title: string; sub: string }[]
+            ).map((item) => (
               <div
                 key={item.title}
                 className="bg-white rounded-xl p-6 shadow-sm border border-gray-50 text-center hover:shadow-md hover:-translate-y-0.5 transition-all"
               >
-                <span className="text-4xl mb-3 block">{item.icon}</span>
+                <Icon
+                  name={item.icon}
+                  size={56}
+                  className="mx-auto mb-3"
+                  decorative
+                />
                 <h3 className="font-semibold text-harbor-blue text-sm">{item.title}</h3>
                 <p className="text-xs text-gray-400 mt-1 leading-relaxed">{item.sub}</p>
               </div>
@@ -390,15 +398,17 @@ export default function Home() {
                 you right in the heart of it all.
               </p>
               <div className="space-y-4 mb-8">
-                {[
-                  { icon: "📍", text: "5 minutes to downtown Lake Geneva" },
-                  { icon: "🏙️", text: "~1 hour north of Chicago" },
-                  { icon: "🏙️", text: "~1 hour south of Milwaukee" },
-                  { icon: "🌊", text: "3 miles to Lake Geneva Public Beach" },
-                  { icon: "⛳", text: "Minutes from 5 world-class golf courses" },
-                ].map((item) => (
+                {(
+                  [
+                    { icon: "map-pin", text: "5 minutes to downtown Lake Geneva" },
+                    { icon: "city-skyline", text: "~1 hour north of Chicago" },
+                    { icon: "city-skyline", text: "~1 hour south of Milwaukee" },
+                    { icon: "lake-access", text: "3 miles to Lake Geneva Public Beach" },
+                    { icon: "golf", text: "Minutes from 5 world-class golf courses" },
+                  ] satisfies { icon: IconName; text: string }[]
+                ).map((item) => (
                   <div key={item.text} className="flex items-center gap-3 text-gray-700">
-                    <span className="text-xl">{item.icon}</span>
+                    <Icon name={item.icon} size={28} decorative />
                     <span className="text-sm font-medium">{item.text}</span>
                   </div>
                 ))}

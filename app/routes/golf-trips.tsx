@@ -6,45 +6,46 @@ import { PROPERTY, IMAGES, GOLF_COURSES, STATIC_REVIEWS, getLodgingSchema } from
 import BookingCTA from "~/components/BookingCTA";
 import StarRating from "~/components/StarRating";
 import ReviewCard from "~/components/ReviewCard";
+import { Icon, type IconName } from "~/lib/icons";
 
 export const meta: MetaFunction = () => [
   ...buildMeta(PAGE_META.golfTrips),
   { "script:ld+json": getLodgingSchema() },
 ];
 
-const GOLF_FEATURES = [
+const GOLF_FEATURES: { icon: IconName; title: string; description: string }[] = [
   {
-    icon: "⛳",
+    icon: "golf",
     title: "5 Courses Within 12 Miles",
     description:
       "From Arnold Palmer–designed Geneva National to the championship Brute at Grand Geneva, your tee sheet is stacked.",
   },
   {
-    icon: "🏠",
+    icon: "house",
     title: "Sleeps 14 Comfortably",
     description:
       "Multiple room configurations mean every golfer has their own bed. No hotel hallways, no noise complaints.",
   },
   {
-    icon: "🔥",
+    icon: "fire-pit",
     title: "The Perfect 19th Hole",
     description:
       "Settle the bet around the fire pit. Grill steaks on the charcoal BBQ. Replay every birdie in the game room.",
   },
   {
-    icon: "🍳",
+    icon: "gourmet-kitchen",
     title: "Full Kitchen & Grill",
     description:
       "Skip the restaurant bill. The gourmet kitchen and charcoal BBQ grill handle pre-round breakfasts and post-round feasts.",
   },
   {
-    icon: "🍺",
+    icon: "cheers",
     title: "Fridge Stocked Your Way",
     description:
       "Full-size fridge plus a mini fridge. Stock them on arrival and keep the cooler flowing all weekend.",
   },
   {
-    icon: "🚗",
+    icon: "parking",
     title: "Park All the Carts & Cars",
     description:
       "2-car garage plus 3–4 driveway spots. Pull in, unload the bags, and you're home.",
@@ -171,7 +172,7 @@ export default function GolfTrips() {
                 key={feature.title}
                 className="bg-white rounded-2xl p-8 shadow-sm border border-gray-50 hover:shadow-md transition-shadow"
               >
-                <span className="text-4xl mb-4 block">{feature.icon}</span>
+                <Icon name={feature.icon} size={64} className="mb-4" decorative />
                 <h3 className="font-display text-xl font-semibold text-harbor-blue mb-3">
                   {feature.title}
                 </h3>
@@ -203,8 +204,8 @@ export default function GolfTrips() {
                     key={course.name}
                     className="flex gap-5 p-5 rounded-xl bg-harbor-cream hover:bg-harbor-warm transition-colors"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-harbor-blue rounded-xl flex items-center justify-center text-harbor-gold text-xl font-bold">
-                      ⛳
+                    <div className="flex-shrink-0 w-12 h-12 bg-harbor-blue rounded-xl flex items-center justify-center">
+                      <Icon name="golf" size={32} decorative />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
