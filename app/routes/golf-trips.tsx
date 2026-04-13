@@ -55,38 +55,52 @@ const GOLF_FEATURES: { icon: IconName; title: string; description: string }[] = 
 const ITINERARY = [
   {
     day: "Day 1",
-    title: "Arrive & Tee It Up",
+    title: "Arrive & Shake Off the Drive",
     items: [
-      "Check in at 4 PM — keypad entry, no waiting",
-      "Unpack and grab cold ones from the fridge",
-      "Afternoon round at Abbey Springs (4 miles away)",
-      "Grill dinner in the backyard",
-      "Fire pit & card games into the night",
+      "Check in at 4 PM — keypad entry, nobody waiting on you",
+      "Fridge stocked, bags dropped, first cold one open",
+      "Afternoon 9 at Abbey Springs — legs loose, swing loose",
+      "Grill dinner in the backyard: steaks or brats, your call",
+      "Fire pit, trash talk, card games into the night",
     ],
   },
   {
     day: "Day 2",
-    title: "The Main Event",
+    title: "The Brute",
     items: [
-      "Big breakfast in the full kitchen",
-      "Morning tee time at Grand Geneva — The Brute or Highlands",
+      "Big breakfast in the full kitchen — eggs, bacon, no rush",
+      "Morning tee time at Grand Geneva: The Brute",
       "Lunch at the resort clubhouse",
-      "Optional afternoon round at Geneva National",
-      "Grill steaks back at the house",
-      "Settle the bets. Game room. Fire pit. Repeat.",
+      "The Highlands in the afternoon — the group that skips it regrets it",
+      "Grill back at the house, settle the first-day bets",
+      "Game room. Fire pit. Someone's already down $40.",
     ],
   },
   {
     day: "Day 3",
-    title: "One More Round",
+    title: "Geneva National",
     items: [
-      "Breakfast burritos before tee time",
-      "Round at Hawk's View or Geneva National Course 3",
-      "Quick stop in downtown Lake Geneva",
-      "Check out by 10 AM — already planning next year",
+      "Breakfast burritos before the morning tee time",
+      "18 on the Palmer course — those lakefront holes are why people come back",
+      "Lunch at the Hunt Club Steakhouse on-site (don't skip it)",
+      "Afternoon off: nap, lake swim, or a slow walk downtown",
+      "Dinner in town — first real night out all weekend",
     ],
   },
 ];
+
+const DAY_FOUR = {
+  day: "Day 4",
+  title: "The Round Nobody Skipped",
+  tagline: "Every group that plays it says the same thing on the drive home.",
+  items: [
+    "Coffee on the patio. No alarm.",
+    "18 holes at Hawk's View — the elevation changes nobody saw coming",
+    "Post-round lunch at the house, fridge still stocked",
+    "Slow checkout. The drive back through the farmland hits different when you're not rushing.",
+    "Home by dinner. Group chat already planning next year.",
+  ],
+};
 
 const golfReviews = STATIC_REVIEWS.filter(
   (r) => r.id === "2" || r.id === "5"
@@ -288,14 +302,15 @@ export default function GolfTrips() {
           <div className="text-center mb-14">
             <span className="divider-gold-center" />
             <h2 className="font-display text-4xl font-semibold text-harbor-blue mt-4">
-              A Sample 3-Day Golf Weekend
+              How a Golf Trip Here Unfolds
             </h2>
             <p className="text-gray-500 mt-3">
-              Here's how your group's weekend might look — adjust to your own ambition level.
+              Adjust to your own ambition level — most groups find their own rhythm by Day 2.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Days 1–3 */}
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
             {ITINERARY.map((day, idx) => (
               <div key={day.day} className="bg-white rounded-2xl p-8 shadow-sm">
                 <div className="flex items-center gap-3 mb-5">
@@ -314,15 +329,47 @@ export default function GolfTrips() {
                 <ul className="space-y-2.5">
                   {day.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                      <Check
-                        className="w-4 h-4 text-harbor-gold mt-0.5 flex-shrink-0"
-                      />
+                      <Check className="w-4 h-4 text-harbor-gold mt-0.5 flex-shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
+          </div>
+
+          {/* Day 4 — full-width feature card */}
+          <div className="relative bg-harbor-blue rounded-2xl p-8 sm:p-10 shadow-md overflow-hidden">
+            {/* Subtle background texture */}
+            <div className="absolute inset-0 opacity-5"
+              style={{ backgroundImage: "repeating-linear-gradient(45deg, #c8a86b 0, #c8a86b 1px, transparent 0, transparent 50%)", backgroundSize: "12px 12px" }}
+            />
+            <div className="relative z-10 grid sm:grid-cols-[auto_1fr] gap-6 sm:gap-10 items-start">
+              <div className="flex items-center gap-3 sm:flex-col sm:items-center sm:gap-2">
+                <div className="w-12 h-12 rounded-full bg-harbor-gold flex items-center justify-center text-harbor-blue font-bold">
+                  4
+                </div>
+                <p className="text-xs text-harbor-gold font-semibold uppercase tracking-widest sm:text-center">
+                  {DAY_FOUR.day}
+                </p>
+              </div>
+              <div>
+                <h3 className="font-display text-2xl font-semibold text-white mb-1">
+                  {DAY_FOUR.title}
+                </h3>
+                <p className="text-harbor-gold/80 text-sm italic mb-6">
+                  {DAY_FOUR.tagline}
+                </p>
+                <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-2.5">
+                  {DAY_FOUR.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-blue-100">
+                      <Check className="w-4 h-4 text-harbor-gold mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
