@@ -44,18 +44,18 @@ If you're the parent of a one-year-old, the last thing you want to do is pack a 
 
 ### 7. Rainy-day plan
 
-A week on the lake means at least one day of rain. A game room with a pool table, board games, HDTV with Disney+, a puzzle on a coffee table — these are what save the trip.
+A week on the lake means at least one day of rain. A game room with a pool table, board games, HDTV with streaming, a puzzle on a coffee table — these are what save the trip.
 
 ## Kid-friendly things to do in Lake Geneva
 
-Beyond the house, Lake Geneva is stacked with kid activities within 10 minutes:
+Beyond the house, Lake Geneva is packed with family activities within a short drive:
 
-- **Riviera Beach** — classic sandy public beach downtown, lifeguarded.
-- **Lake Geneva Cruise Line** — 1-hour mailboat tours kids love; the "mail jumper" jumps off a moving boat and it's a real thing.
-- **Hillmoor Golf Park** — mini golf, batting cages, go-karts.
-- **Scoops Ice Cream** — the post-beach tradition.
-- **Yerkes Observatory** — 15 minutes away, real telescopes, real science.
-- **Lake Geneva Shore Path** — the 21-mile public walking path along the lake; the mile near Riviera Beach is perfect for young kids.
+- **[Riviera Beach](https://www.visitlakegeneva.com/listing/riviera-beach-lake-geneva/64/)** — 600 feet of sandy public beach in downtown Lake Geneva, with lifeguards on duty through summer.
+- **[Lake Geneva Cruise Line](https://www.cruiselakegeneva.com/public-tours/us-mailboat/)** — the iconic 2.5-hour US Mailboat Tour, where a "mail jumper" leaps from a moving boat to deliver mail to lakefront estates. One of the only active mailboat services in the country, and kids are riveted by the jumpers.
+- **Mini golf and outdoor activities** — several family entertainment spots in the Lake Geneva area offer mini golf and outdoor fun; ask locals for current recommendations.
+- **[Scoops Ice Cream](https://www.visitlakegeneva.com/)** — the post-beach tradition.
+- **[Yerkes Observatory](https://www.visitlakegeneva.com/listing/yerkes-observatory/3340/)** — 15 minutes away in Williams Bay; a historic observatory on Geneva Lake with public programs and real telescopes.
+- **[Geneva Lake Shore Path](https://www.visitlakegeneva.com/things-to-do/shore-path/)** — the roughly 21-mile walking path that borders the lake; the mile near Riviera Beach is perfect for young kids.
 
 For a 4-day family trip, this is more than enough.
 
@@ -79,6 +79,6 @@ No flights. No rental cars. No airport security with a toddler.
 
 **Can we bring a dog?** Not currently — the house is pet-free because of guest allergies. See the [FAQ page](/faq) for details.
 
-**How far is the beach?** The Lake Como association beach is a short drive (under 10 minutes). Riviera Beach in downtown Lake Geneva is about 8 minutes.
+**How far is the beach?** The Lake Como association beach is a short drive (under 10 minutes). [Riviera Beach](https://www.visitlakegeneva.com/listing/riviera-beach-lake-geneva/64/) in downtown Lake Geneva is about 8 minutes.
 
 **Is there a washer/dryer?** Yes — in-unit, because sandy-kid laundry is non-optional on family trips.

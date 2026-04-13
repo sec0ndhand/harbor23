@@ -12,31 +12,31 @@ seo_description: "Everything you need to plan a weekend in Lake Geneva from Chic
 
 If you live in Chicago, you already know the summer urge: the lake views get crowded, Lake Shore Drive grinds to a halt, and every neighborhood patio is booked out. The best cure is 90 minutes north on I-94 — Lake Geneva, Wisconsin.
 
-This is the Midwest's classic resort town, where Chicago's wealthy families have been building lake houses for 150 years. But you don't need to own an estate on the shore to get the good version of Lake Geneva — you just need to know where to stay and how to spend two days.
+This is the Midwest's classic resort town, where Chicago's wealthy families have been building lake houses for [over 150 years](https://wheninyourstate.com/wisconsin/why-chicagoans-have-been-driving-75-miles-to-this-quaint-wisconsin-lake-town-for-over-150-years/), especially after the Great Chicago Fire of 1871. But you don't need to own an estate on the shore to get the good version of Lake Geneva — you just need to know where to stay and how to spend two days.
 
 ## Driving from Chicago
 
-From downtown Chicago, the door-to-door drive is **~90 minutes** in good traffic. Leave Friday at 4 PM and you hit summer backups, but slide out by 2 PM or after 7 and you'll roll into town in about an hour and a half. The last 15 minutes off I-94 wind through farmland and old estates — it's the part where you actually feel yourself exhale.
+From downtown Chicago, the door-to-door drive is **~90 minutes** in good traffic (about 75 miles on I-94). Leave Friday at 4 PM and you'll hit summer backups, but slide out by 2 PM or after 7 and you'll roll in at close to an hour and a half. The last 15 minutes off I-94 wind through farmland and old estates — it's the part where you actually feel yourself exhale.
 
 **Best routes from Chicago neighborhoods:**
 
-- **The Loop / West Loop**: I-90/94 → I-94 → Exit at WI-50 → 5 min to downtown
-- **Lincoln Park / Lakeview**: Lake Shore → I-90/94 → same as above
+- **The Loop / West Loop**: I-90/94 → I-94 → Exit at WI-50 E → 5 min to downtown
+- **Lincoln Park / Lakeview**: Lake Shore Dr → I-90/94 → same as above
 - **Oak Park / Wicker Park**: I-290 → I-90 → I-94 → WI-50
 
 ## The perfect 2-day itinerary
 
 ### Day 1 — Arrive, settle, sunset on the lake
 
-Roll into Lake Geneva around dinner, drop your bags, and walk straight to the lake. The **Geneva Lake Shore Path** is a 21-mile public walking path that crosses through the estates of the Wrigleys, Schwinns, and Maytags — the best sunset stretch is the mile leaving from Riviera Beach. Grab dinner at **Sopra Bistro** (Italian) or **Popeye's on Lake Geneva** (classic lakefront, family-friendly) and call it a night.
+Roll into Lake Geneva around dinner, drop your bags, and walk straight to the lake. The **[Geneva Lake Shore Path](https://www.visitlakegeneva.com/things-to-do/shore-path/)** is a roughly 21-mile public walking trail that winds through the private estates of the Wrigleys, Schwinns, and Maytags — the best sunset stretch is the mile leaving from Riviera Beach. Grab dinner at **[Sopra Bistro](https://soprabistro.com/)** (Italian, 724 W Main St) or **Popeye's on Lake Geneva** (classic lakefront tavern, family-friendly) and call it a night.
 
 ### Day 2 — Lake day, golf day, or spa day
 
 Choose your adventure based on the crew:
 
-- **Boat day:** Rent a pontoon from **Gordy's Boat House** for the morning. Even a 2-hour rental is enough to see the mansions from the water and stop at a swim spot.
-- **Golf:** Geneva National, Grand Geneva, Abbey Springs, and Hawk's View are all within 15 minutes. See [our Best Golf Courses Near Chicago post](/blog/best-golf-courses-near-chicago) for the full breakdown.
-- **Spa:** **Avani Spa at The Abbey Resort** is the quiet heavy-hitter. Book a morning massage and linger at the pools.
+- **Boat day:** Rent a boat from **[Gordy's Marine](https://www.gordysboats.com/)** in Fontana. Even a 2-hour rental is enough to see the mansions from the water and stop at a swim spot.
+- **Golf:** Grand Geneva, Geneva National, Abbey Springs, and Hawk's View are all within a 15-minute drive. See [our Best Golf Courses Near Chicago post](/blog/best-golf-courses-near-chicago) for the full breakdown.
+- **Spa:** **[Avani Spa at The Abbey Resort](https://www.theabbeyresort.com/lake-geneva-wisconsin-spa/)** is the quiet heavy-hitter — a 35,000-square-foot facility in Fontana with massages, pools, and a salt room.
 
 Head back Sunday afternoon — you'll be back in Chicago before dinner.
 
@@ -50,7 +50,7 @@ It's the answer to "where do we stay that fits everyone" — whether it's a golf
 
 ## Quick FAQ
 
-**How far is Lake Geneva from Chicago?** About 90 minutes driving (75 miles), depending on traffic and where in Chicago you're leaving from.
+**How far is Lake Geneva from Chicago?** About 90 minutes driving (roughly 75 miles on I-94), depending on traffic and where in Chicago you're leaving from.
 
 **Is it worth the drive for just a weekend?** Absolutely. Most Chicago weekenders arrive Friday night and leave Sunday afternoon — 40 hours on the lake, and you're home in time to unpack before Monday.
 

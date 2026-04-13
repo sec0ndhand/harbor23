@@ -110,11 +110,17 @@ export default function BlogPost() {
 
           {/* Rendered markdown from app/content/blog/*.md (parsed at build time) */}
           <div
-            className="prose prose-lg prose-harbor max-w-none
+            className="prose prose-lg max-w-none
               prose-headings:font-display prose-headings:text-harbor-blue
+              prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3
+              prose-p:text-gray-700 prose-p:leading-relaxed
               prose-a:text-harbor-gold prose-a:no-underline hover:prose-a:underline
               prose-strong:text-harbor-blue
-              prose-blockquote:border-harbor-gold prose-blockquote:text-gray-600"
+              prose-blockquote:border-l-4 prose-blockquote:border-harbor-gold prose-blockquote:text-gray-600 prose-blockquote:not-italic
+              prose-ul:my-4 prose-li:my-1
+              prose-table:w-full prose-table:text-sm
+              prose-th:bg-harbor-blue prose-th:text-white prose-th:px-4 prose-th:py-2
+              prose-td:px-4 prose-td:py-2 prose-td:border prose-td:border-gray-200"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
