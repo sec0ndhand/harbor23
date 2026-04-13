@@ -142,7 +142,7 @@ export default function GolfTrips() {
             {[
               { label: "Golf Courses Nearby", value: "5+" },
               { label: "Guests Fit Comfortably", value: "14" },
-              { label: "Miles to Grand Geneva", value: "8" },
+              { label: "Min to Grand Geneva", value: "5" },
               { label: "Airbnb Rating", value: `${PROPERTY.rating} ★` },
             ].map((stat) => (
               <div key={stat.label} className="px-4">
@@ -208,14 +208,30 @@ export default function GolfTrips() {
                     <div className="flex-shrink-0 w-12 h-12 bg-harbor-blue rounded-xl flex items-center justify-center">
                       <Icon name="golf" size={32} decorative />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="font-semibold text-harbor-blue">{course.name}</h3>
-                        <span className="text-xs bg-harbor-gold/20 text-harbor-blue px-2 py-0.5 rounded-full font-medium">
+                        {course.url ? (
+                          <a
+                            href={course.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-harbor-blue hover:text-harbor-gold transition-colors"
+                          >
+                            {course.name} ↗
+                          </a>
+                        ) : (
+                          <h3 className="font-semibold text-harbor-blue">{course.name}</h3>
+                        )}
+                        <span className="text-xs bg-harbor-gold/20 text-harbor-blue px-2 py-0.5 rounded-full font-medium whitespace-nowrap">
                           {course.distance}
                         </span>
                       </div>
                       <p className="text-sm text-gray-500 mt-1">{course.description}</p>
+                      {course.reviewHighlight && (
+                        <p className="text-xs text-gray-400 italic mt-2 border-l-2 border-harbor-gold/40 pl-2">
+                          "{course.reviewHighlight}"
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}

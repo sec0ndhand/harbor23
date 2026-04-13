@@ -245,28 +245,48 @@ export const STATIC_REVIEWS: Review[] = [
 export const GOLF_COURSES = [
   {
     name: "Grand Geneva Resort – The Brute",
-    distance: "8 miles",
-    description: "Championship 18-hole course at the iconic Grand Geneva Resort.",
+    distance: "~5 min",
+    description:
+      "Championship 18-hole course — long, muscular, and consistently ranked among the best in Wisconsin. The layout rewards every handicap level.",
+    url: "https://www.grandgeneva.com/golf/courses",
+    reviewHighlight:
+      "One of the top-rated courses in the Midwest — greens and conditioning are resort-excellent. Always in great shape.",
   },
   {
     name: "Grand Geneva Resort – The Highlands",
-    distance: "8 miles",
-    description: "A Scottish links-style course with stunning Wisconsin scenery.",
+    distance: "~5 min",
+    description:
+      "Scottish links-style sibling to The Brute, with rolling terrain and fescue roughs. Play both Grand Geneva courses back-to-back for the full experience.",
+    url: "https://www.grandgeneva.com/golf/courses",
+    reviewHighlight:
+      "A great contrast to The Brute — the elevation changes and wind make it a completely different challenge on the same property.",
   },
   {
     name: "Geneva National Golf Club",
-    distance: "6 miles",
-    description: "Three world-class 18-hole courses designed by Arnold Palmer, Lee Trevino & Gary Player.",
+    distance: "~10 min",
+    description:
+      "54 holes designed by Arnold Palmer, Gary Player, and Lee Trevino. The Palmer course is the standout — signature lakefront holes and an excellent clubhouse steakhouse.",
+    url: "https://www.destinationgn.com/golf",
+    reviewHighlight:
+      "The Palmer course is a bucket-list Midwest round. Lakefront holes are stunning. The Hunt Club Steakhouse is surprisingly excellent — don't skip it.",
   },
   {
     name: "Abbey Springs Golf Course",
-    distance: "4 miles",
-    description: "Beautiful lakeside course with views of Fontana-on-Geneva Lake.",
+    distance: "~10 min",
+    description:
+      "Semi-private gem in Fontana with postcard water views on multiple holes. Tight, tree-lined fairways that reward accuracy over power.",
+    url: "https://www.abbeysprings.org/",
+    reviewHighlight:
+      "A hidden gem — beautiful views and well-maintained without the big resort price tag. A favorite second-day course for golf groups.",
   },
   {
     name: "Hawk's View Golf Club",
-    distance: "12 miles",
-    description: "Award-winning course with dramatic elevation changes and stunning views.",
+    distance: "~15 min",
+    description:
+      "Dramatic elevation changes you don't expect in Wisconsin. The championship Como Crossings layout is the main 18; Barn Hollow is a great par-3 warm-up.",
+    url: "https://www.hawksviewgolfclub.com/",
+    reviewHighlight:
+      "The elevation changes feel like a completely different state — memorable holes and great pace of play.",
   },
 ];
 
