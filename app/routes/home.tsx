@@ -333,9 +333,14 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
-            {AMENITIES.slice(0, 12).map((amenity, i) => (
-              <div key={i} className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm">
-                <span className="text-2xl">{amenity.icon}</span>
+            {AMENITIES.slice(0, 12).map((amenity) => (
+              <div key={amenity.icon} className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm">
+                <Icon
+                  name={amenity.icon}
+                  size={40}
+                  className="flex-shrink-0"
+                  decorative
+                />
                 <span className="text-sm font-medium text-gray-700">{amenity.label}</span>
               </div>
             ))}
