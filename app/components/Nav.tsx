@@ -76,8 +76,22 @@ export default function Nav() {
               className="relative"
               onMouseEnter={() => setExpOpen(true)}
               onMouseLeave={() => setExpOpen(false)}
+              onFocus={() => setExpOpen(true)}
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                  setExpOpen(false);
+                }
+              }}
             >
               <button
+                type="button"
+                onClick={() => setExpOpen((open) => !open)}
+                onKeyDown={(event) => {
+                  if (event.key === "Escape") {
+                    setExpOpen(false);
+                    event.currentTarget.blur();
+                  }
+                }}
                 className={`flex items-center gap-1 text-sm font-medium tracking-wide transition-colors border-b-2 border-transparent pb-0.5 ${linkColor}`}
                 aria-haspopup="true"
                 aria-expanded={expOpen}
@@ -86,16 +100,18 @@ export default function Nav() {
                 <ChevronDown className="w-4 h-4 mt-0.5" />
               </button>
               {expOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-50">
-                  {EXPERIENCES.map((exp) => (
-                    <NavLink
-                      key={exp.to}
-                      to={exp.to}
-                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-harbor-warm hover:text-harbor-blue transition-colors"
-                    >
-                      {exp.label}
-                    </NavLink>
-                  ))}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-52 z-50">
+                  <div className="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden">
+                    {EXPERIENCES.map((exp) => (
+                      <NavLink
+                        key={exp.to}
+                        to={exp.to}
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-harbor-warm hover:text-harbor-blue transition-colors"
+                      >
+                        {exp.label}
+                      </NavLink>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

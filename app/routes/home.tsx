@@ -405,8 +405,8 @@ export default function Home() {
                 {(
                   [
                     { icon: "map-pin", text: "5 minutes to downtown Lake Geneva" },
-                    { icon: "city-skyline", text: "~1 hour north of Chicago" },
-                    { icon: "city-skyline", text: "~1 hour south of Milwaukee" },
+                    { icon: "chicago-skyline", text: "~1 hour north of Chicago" },
+                    { icon: "milwaukee-skyline", text: "~1 hour south of Milwaukee" },
                     { icon: "lake-access", text: "3 miles to Lake Geneva Public Beach" },
                     { icon: "golf", text: "Minutes from 5 world-class golf courses" },
                   ] satisfies { icon: IconName; text: string }[]

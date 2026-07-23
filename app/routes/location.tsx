@@ -31,8 +31,8 @@ export default function Location() {
             {(
               [
                 { from: "Downtown Lake Geneva", distance: "5 min drive", icon: "house" },
-                { from: "Chicago, IL", distance: "~1 hr south", icon: "city-skyline" },
-                { from: "Milwaukee, WI", distance: "~1 hr north", icon: "city-skyline" },
+                { from: "Chicago, IL", distance: "~1 hr south", icon: "chicago-skyline" },
+                { from: "Milwaukee, WI", distance: "~1 hr north", icon: "milwaukee-skyline" },
                 { from: "Lake Geneva Beach", distance: "3 miles", icon: "private-beach" },
               ] satisfies { from: string; distance: string; icon: IconName }[]
             ).map((d) => (
@@ -164,7 +164,7 @@ export default function Location() {
               <Icon name="parking" size={22} decorative /> Easy highway access from I-43 &amp; I-90
             </span>
             <span className="inline-flex items-center gap-2">
-              <Icon name="city-skyline" size={22} decorative /> 60 mi from Chicago O'Hare
+              <Icon name="ohare-airport" size={22} decorative /> 60 mi from Chicago O'Hare
             </span>
           </div>
         </div>

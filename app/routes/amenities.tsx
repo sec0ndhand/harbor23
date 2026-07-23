@@ -69,7 +69,12 @@ export default function Amenities() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {items.map((a, i) => (
                   <div key={i} className="flex items-center gap-3 py-2">
-                    <span className="text-xl">{a.icon}</span>
+                    <Icon
+                      name={a.icon}
+                      size={32}
+                      className="flex-shrink-0"
+                      decorative
+                    />
                     <span className="text-sm text-gray-700">{a.label}</span>
                   </div>
                 ))}

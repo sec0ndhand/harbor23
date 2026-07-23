@@ -301,6 +301,27 @@ export const ICON_MANIFEST = [
     emoji: "🏙️",
   },
   {
+    key: "chicago-skyline",
+    subject:
+      "a compact Chicago skyline with a tall dark tower, a stepped skyscraper, and a small lakefront wave",
+    alt: "Chicago skyline",
+    emoji: "🏙️",
+  },
+  {
+    key: "milwaukee-skyline",
+    subject:
+      "a compact Milwaukee skyline featuring a graceful white wing-shaped art museum beside a small lakefront wave",
+    alt: "Milwaukee skyline",
+    emoji: "🏙️",
+  },
+  {
+    key: "ohare-airport",
+    subject:
+      "a small passenger airplane above a simplified airport terminal with a curved access road",
+    alt: "Chicago O'Hare airport",
+    emoji: "✈️",
+  },
+  {
     key: "house",
     subject: "a tiny cozy house with a red roof, two windows, and a chimney",
     alt: "Private lake house",
